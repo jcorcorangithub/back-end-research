@@ -35,18 +35,19 @@ public class UserController {
 
     @PutMapping("user/{id}") // update user variables
     public User updateUser(@RequestBody User user, @PathVariable int id) {
-    Optional<User> foundUser = userRepository.findById(user.getId());
+    User foundUser = userRepository.findByUsername(user.getUsername());
 
-    if (user.getId() != foundUser.get().getId()) {
+    if (user.getUsername() != foundUser.getUsername()) {
         throw new IllegalArgumentException("User ID must match parameter given!");
     }
-    foundUser.get().setId(user.getID);
-    foundUser.get().setUsername(user.getUsername());
-    foundUser.get().setFirstName(user.getFirstName());
-    foundUser.get().setLastName(user.getLastName());
-    foundUser.get().setEmail(user.getEmail());
-    foundUser.get().setPassword(user.getPassword());
-    return userRepository.save(foundUser.get());
+
+    foundUser.setUsername(user.getUsername());
+    foundUser.setUsername(user.getUsername());
+    foundUser.setFirstName(user.getFirstName());
+    foundUser.setLastName(user.getLastName());
+    foundUser.setEmail(user.getEmail());
+    foundUser.setPassword(user.getPassword());
+    return userRepository.save(foundUser);
     }
 
     @DeleteMapping("/user/{id}") // delete user
