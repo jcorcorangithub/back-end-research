@@ -35,10 +35,10 @@ public class ServiceLayer {
     // list of article objects associated
     // will have an empty array list for articles
     // will have an empty array list for members
-    @Transactional
-    public ArchiveViewModel createArchive(ArchiveViewModel viewModel){
-        Archive archive = new Archive();
-        archive.setArchiveId(43);
-        
-    }
+//    @Transactional
+//    public ArchiveViewModel createArchive(ArchiveViewModel viewModel){
+//        Archive archive = new Archive();
+//        archive.setArchiveId(43);
+//
+//    }
 }
