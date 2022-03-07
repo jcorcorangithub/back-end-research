@@ -2,6 +2,7 @@ package com.company.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import javax.persistence.*;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -11,29 +12,37 @@ import java.util.Objects;
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Table(name = "member")
-public class Member {
 
-    @Id
+public class Member extends User {
+
+    @Id@GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "member_id")
-    private String memberId;
+    private Integer id;
+    private User user;
     private int archiveId;
-    private String memberFname;
-    private String memberLname;
 
-    public Member(String memberId, int archiveId, String memberFname, String memberLname) {
-        this.memberId = memberId;
+
+    public Member(String username, String firstName, String lastName, String email, String password, Integer id, User user, int archiveId) {
+        super(username, firstName, lastName, email, password);
+        this.id = id;
+        this.user = user;
         this.archiveId = archiveId;
-        this.memberFname = memberFname;
-        this.memberLname = memberLname;
-    }
-    public Member(){}
-
-    public String getMemberId() {
-        return memberId;
     }
 
-    public void setMemberId(String memberId) {
-        this.memberId = memberId;
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public int getArchiveId() {
@@ -44,42 +53,26 @@ public class Member {
         this.archiveId = archiveId;
     }
 
-    public String getMemberFname() {
-        return memberFname;
-    }
-
-    public void setMemberFname(String memberFname) {
-        this.memberFname = memberFname;
-    }
-
-    public String getMemberLname() {
-        return memberLname;
-    }
-
-    public void setMemberLname(String memberLname) {
-        this.memberLname = memberLname;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
         Member member = (Member) o;
-        return archiveId == member.archiveId && Objects.equals(memberId, member.memberId) && Objects.equals(memberFname, member.memberFname) && Objects.equals(memberLname, member.memberLname);
+        return archiveId == member.archiveId && Objects.equals(id, member.id) && Objects.equals(user, member.user);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(memberId, archiveId, memberFname, memberLname);
+        return Objects.hash(super.hashCode(), id, user, archiveId);
     }
 
     @Override
     public String toString() {
         return "Member{" +
-                "memberId='" + memberId + '\'' +
+                "id=" + id +
+                ", user=" + user +
                 ", archiveId=" + archiveId +
-                ", memberFname='" + memberFname + '\'' +
-                ", memberLname='" + memberLname + '\'' +
                 '}';
     }
 }
