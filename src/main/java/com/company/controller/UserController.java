@@ -40,12 +40,13 @@ public class UserController {
     if (user.getId() != foundUser.get().getId()) {
         throw new IllegalArgumentException("User ID must match parameter given!");
     }
+    foundUser.get().setId(user.getID);
     foundUser.get().setUsername(user.getUsername());
     foundUser.get().setFirstName(user.getFirstName());
     foundUser.get().setLastName(user.getLastName());
     foundUser.get().setEmail(user.getEmail());
     foundUser.get().setPassword(user.getPassword());
-    return userRepository.save(foundUser.get())
+    return userRepository.save(foundUser.get());
     }
 
     @DeleteMapping("/user/{id}") // delete user
