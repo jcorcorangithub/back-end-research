@@ -1,4 +1,4 @@
-package com.company.model.controller;
+package com.company.controller;
 
 import com.company.model.Archive;
 import com.company.repository.ArchiveRepository;

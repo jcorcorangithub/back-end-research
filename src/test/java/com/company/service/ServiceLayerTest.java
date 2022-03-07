@@ -92,9 +92,8 @@ public class ServiceLayerTest {
         archives.add(outputArchive);
 
         //   Member
-        inputMember = new Member("@johndoe123", 1, "John", "Doe");
-        outputMember = new Member();
-        outputMember.setMemberId("@johndoe123");
+        inputMember = new Member(outputUser, 1);
+        outputMember = new Member(outputUser, 1);
         members = new ArrayList<>();
         members.add(outputMember);
     }
