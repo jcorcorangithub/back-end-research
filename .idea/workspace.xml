@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="1ac4b639-eb21-444e-bf91-23977166f4c1" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
@@ -12,6 +13,15 @@
       <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+    <list default="true" id="c05bee71-4cb2-4e89-98eb-1855734b9c56" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/viewmodel/ArchiveViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/company/service/ServiceLayerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/ArchiveArticle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/repository/ArchiveArticleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/repository/ArchiveArticleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/company/service/ServiceLayerTests.java" beforeDir="false" />
+>>>>>>> 067a943aa61e56a1ae118e009ae9d1bd22313b55
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,5 +89,16 @@
       <updated>1646668719226</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
