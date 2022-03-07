@@ -2,6 +2,7 @@ package com.company.service;
 
 import com.company.model.Archive;
 import com.company.repository.*;
+import com.company.viewmodel.ArchiveViewModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -35,10 +36,10 @@ public class ServiceLayer {
     // list of article objects associated
     // will have an empty array list for articles
     // will have an empty array list for members
-    @Transactional
-    public ArchiveViewModel createArchive(ArchiveViewModel viewModel){
-        Archive archive = new Archive();
-        archive.setArchiveId(43);
-        
-    }
+//    @Transactional
+//    public ArchiveViewModel createArchive(ArchiveViewModel viewModel){
+//        Archive archive = new Archive();
+//        archive.setArchiveId(43);
+//
+//    }
 }
