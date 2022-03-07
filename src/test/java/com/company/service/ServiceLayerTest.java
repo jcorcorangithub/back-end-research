@@ -6,10 +6,12 @@ import com.company.model.Member;
 import com.company.model.User;
 import com.company.repository.*;
 import org.junit.Before;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Bean;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -29,9 +31,6 @@ public class ServiceLayerTest {
 
     @MockBean
     ArchiveRepository archiveRepository;
-
-    @MockBean
-    ArchiveArticleRepository archiveArticleRepository;
 
     @MockBean
     MemberRepository memberRepository;
@@ -61,6 +60,7 @@ public class ServiceLayerTest {
         inputUser = new User("@johndoe123", "John", "Doe", "johndoe@gmail.com", "password1");
         outputUser = new User();
         outputUser.setUsername("@johndoe123");
+        users = new ArrayList<>();
         users.add(outputUser);
 
         //   Article
@@ -74,18 +74,86 @@ public class ServiceLayerTest {
         );
         outputArticle = new Article();
         outputArticle.setArticleId("JC4Acibs_4kJ");
+        articles = new ArrayList<>();
         articles.add(outputArticle);
 
         //   Archive
         inputArchive = new Archive("@johndoe123", "Biology");
         outputArchive = new Archive();
         outputArchive.setArchiveId(1);
+        archives = new ArrayList<>();
         archives.add(outputArchive);
 
         //   Member
         inputMember = new Member("@johndoe123", 1, "John", "Doe");
         outputMember = new Member();
         outputMember.setMemberId("@johndoe123");
+        members = new ArrayList<>();
         members.add(outputMember);
+    }
+
+    @Test
+    public void shouldSaveUserToDatabase() {
+
+    }
+
+    @Test
+    public void shouldReturnAUserFromTheDatabase() {
+
+    }
+
+    @Test
+    public void shouldUpdateAUserFromTheDatabase() {
+
+    }
+
+    @Test
+    public void shouldDeleteAUserFromTheDatabase() {
+
+    }
+
+    @Test
+    public void shouldStoreAnArticleToAUserInDatabase() {
+
+    }
+
+    @Test
+    public void shouldReturnAnArticleFromTheDatabase() {
+
+    }
+
+    @Test
+    public void shouldDeleteAnArticleFromTheDatabase() {
+
+    }
+
+    @Test
+    public void shouldCreateANewArchiveToDatabase() {
+
+    }
+
+    @Test
+    public void shouldUpdateAnArchiveNameInDatabase() {
+
+    }
+
+    @Test
+    public void shouldDeleteAnArchiveInTheDatabase() {
+
+    }
+
+    @Test
+    public void shouldSaveAnArticleToAnArchive() {
+
+    }
+
+    @Test
+    public void shouldCreateANewArchiveMember() {
+
+    }
+
+    @Test
+    public void shouldDeleteAnArchiveMember() {
+
     }
 }
