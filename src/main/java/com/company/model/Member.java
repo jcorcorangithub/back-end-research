@@ -3,14 +3,20 @@ package com.company.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Objects;
 
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Table(name = "member")
+
 public class Member extends User {
 
     @Id@GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "member_id")
     private Integer id;
     private User user;
     private int archiveId;
