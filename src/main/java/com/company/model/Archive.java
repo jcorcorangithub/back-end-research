@@ -2,24 +2,27 @@ package com.company.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Table(name = "archive")
 public class Archive {
+
+    @Id
+    @Column(name = "archive_id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int archiveId;
     private String username;
     private String archiveName;
 
-    public Archive(int archiveId, String username, String archiveName) {
-        this.archiveId = archiveId;
+    public Archive(String username, String archiveName) {
         this.username = username;
         this.archiveName = archiveName;
     }
-    public Archive(){}
+
+    public Archive() {}
 
     public int getArchiveId() {
         return archiveId;
@@ -66,4 +69,5 @@ public class Archive {
                 ", archiveName='" + archiveName + '\'' +
                 '}';
     }
+    //comment
 }
