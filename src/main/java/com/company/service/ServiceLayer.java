@@ -1,6 +1,7 @@
 package com.company.service;
 
 import com.company.model.Archive;
+import com.company.model.User;
 import com.company.repository.*;
 import com.company.viewmodel.ArchiveViewModel;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,6 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 
-//@Service
 @Component
 public class ServiceLayer {
     private ArchiveRepository archiveRepository;
@@ -18,25 +18,25 @@ public class ServiceLayer {
     private UserRepository userRepository;
 
     @Autowired
-    public ServiceLayer(ArchiveRepository archiveRepository,
-                        ArticleRepository articleRepository,
-                        MemberRepository memberRepository,
-                        UserRepository userRepository) {
+    public ServiceLayer(
+            ArchiveRepository archiveRepository,
+            ArticleRepository articleRepository,
+            MemberRepository memberRepository,
+            UserRepository userRepository) {
         this.archiveRepository = archiveRepository;
         this.articleRepository = articleRepository;
         this.memberRepository = memberRepository;
         this.userRepository = userRepository;
     }
-    // int id - represents the archives id
-    // string title
-    // user object associated with it
-    // list of article objects associated
-    // will have an empty array list for articles
-    // will have an empty array list for members
-//    @Transactional
-//    public ArchiveViewModel createArchive(ArchiveViewModel viewModel){
-//        Archive archive = new Archive();
-//        archive.setArchiveId(43);
-//
-//    }
+
+    public User saveUser(User user) {
+
+        return userRepository.save(user);
+    }
+
+    public User findUser(String username) {
+
+        User foundUser = userRepository.findByUsername(username);
+        return foundUser;
+    }
 }

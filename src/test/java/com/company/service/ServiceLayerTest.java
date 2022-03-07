@@ -7,15 +7,22 @@ import com.company.model.User;
 import com.company.repository.*;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Bean;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.when;
 
+@RunWith(SpringRunner.class)
+@SpringBootTest
 public class ServiceLayerTest {
 
     //    Instantiate ServiceLayer when needed
@@ -94,7 +101,14 @@ public class ServiceLayerTest {
 
     @Test
     public void shouldSaveUserToDatabase() {
+        //      Pass input user to service
+        when(userRepository.save(inputUser)).thenReturn(outputUser);
+        when(userRepository.findByUsername(outputUser.getUsername())).thenReturn(outputUser);
+        when(userRepository.findAll()).thenReturn(users);
 
+        User savedUser = service.saveUser(inputUser);
+        User fromServiceUser = service.findUser(savedUser.getUsername());
+        assertEquals(outputUser.getUsername(), fromServiceUser.getUsername());
     }
 
     @Test
