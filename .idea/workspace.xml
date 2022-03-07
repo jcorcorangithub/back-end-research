@@ -6,7 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="c05bee71-4cb2-4e89-98eb-1855734b9c56" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/repository/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/repository/MemberRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/service/ServiceLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/service/ServiceLayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/company/service/ServiceLayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/company/service/ServiceLayerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/application.properties" afterDir="false" />
+=======
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/controller/UserController.java" afterDir="false" />
+>>>>>>> 20bc70af7ed42fd1c64825f96e1753bce606310d
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,12 +38,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+<<<<<<< HEAD
+=======
     <setting file="file://$PROJECT_DIR$/src/main/java/com/company/repository/ArticleRepository.java" root0="FORCE_HIGHLIGHTING" />
+>>>>>>> 20bc70af7ed42fd1c64825f96e1753bce606310d
     <setting file="file://$PROJECT_DIR$/src/main/java/com/company/repository/UserRepository.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/company/model/Archive.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/.gitignore" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/company/model/Member.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/company/model/Archive.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/company/repository/ArchiveRepository.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/company/repository/ArticleRepository.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
@@ -78,13 +91,67 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Java Workspace/M3/04-service-layer-mocks-lesson" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.company" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.ServiceLayerTest.shouldSaveUserToDatabase">
+    <configuration name="AppTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="record-collection" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AppTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceLayerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="record-collection" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.company.service" />
+      <option name="MAIN_CLASS_NAME" value="com.company.service.ServiceLayerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceLayerTest.shouldSaveUserToDatabase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="record-collection" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.company.service" />
+      <option name="MAIN_CLASS_NAME" value="com.company.service.ServiceLayerTest" />
+      <option name="METHOD_NAME" value="shouldSaveUserToDatabase" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ServiceLayerTest.shouldSaveUserToDatabase" />
+        <item itemvalue="JUnit.ServiceLayerTest" />
+        <item itemvalue="JUnit.AppTests" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1ac4b639-eb21-444e-bf91-23977166f4c1" name="Changes" comment="" />
+      <changelist id="c05bee71-4cb2-4e89-98eb-1855734b9c56" name="Changes" comment="" />
       <created>1646668719226</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />

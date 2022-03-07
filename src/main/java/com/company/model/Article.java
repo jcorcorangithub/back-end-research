@@ -2,8 +2,7 @@ package com.company.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -11,6 +10,10 @@ import java.util.Objects;
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Table(name = "article")
 public class Article {
+
+    @Id
+    @Column(name = "article_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String articleId;
     private String username;
     private String title;

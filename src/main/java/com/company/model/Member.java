@@ -21,10 +21,9 @@ public class Member extends User {
     private User user;
     private int archiveId;
 
+    public Member() { }
 
-    public Member(String username, String firstName, String lastName, String email, String password, Integer id, User user, int archiveId) {
-        super(username, firstName, lastName, email, password);
-        this.id = id;
+    public Member(User user, int archiveId) {
         this.user = user;
         this.archiveId = archiveId;
     }
