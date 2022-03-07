@@ -2,6 +2,7 @@ package com.company.service;
 
 import com.company.model.Archive;
 import com.company.repository.*;
+import com.company.viewmodel.ArchiveViewModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
