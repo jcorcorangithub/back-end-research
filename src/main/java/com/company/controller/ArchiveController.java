@@ -1,7 +1,6 @@
-package com.company.model.controller;
+package com.company.controller;
 
 import com.company.model.Archive;
-import com.company.model.ArchiveArticle;
 import com.company.repository.ArchiveRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -42,7 +41,7 @@ public class ArchiveController {
         Optional<Archive> foundArchive = archiveRepository.findById(archive.getArchiveId());
 
         if (archive.getArchiveId() != foundArchive.get().getArchiveId()) {
-            throw new IllegalArgumentException("Archive ID must match parameter given!")
+            throw new IllegalArgumentException("Archive ID must match parameter given!");
         }
         foundArchive.get().setArchiveId(archive.getArchiveId());
         foundArchive.get().setUsername(archive.getUsername());

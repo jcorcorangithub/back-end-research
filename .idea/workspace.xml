@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c05bee71-4cb2-4e89-98eb-1855734b9c56" name="Changes" comment="" />
+    <list default="true" id="c05bee71-4cb2-4e89-98eb-1855734b9c56" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/controller/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/controller/ArchiveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/controller/ArchiveController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/repository/ArchiveArticleRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/repository/ArticleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/repository/ArticleRepository.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,7 +34,6 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/java/com/company/repository/ArticleRepository.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/company/repository/ArchiveArticleRepository.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/company/repository/UserRepository.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/.gitignore" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/company/model/Member.java" root0="FORCE_HIGHLIGHTING" />
