@@ -8,7 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.Optional;
+
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -42,7 +45,7 @@ public class ArchiveRepositoryTests {
     }
 
     @Test
-    public void shouldUpdateArchive() {
+    public void shouldUpdateArchiveFromDatabase() {
         archiveRepository.save(archive2);
         archive.setArchiveId(1);
         archive2.setArchiveName("Mock update");
@@ -51,6 +54,10 @@ public class ArchiveRepositoryTests {
     }
 
     @Test
-    public void shouldDeleteArchive() {
+    public void shouldDeleteArchiveFromDatabase() {
+        archive = archiveRepository.save(archive);
+        archiveRepository.deleteById(archive2.getArchiveId());
+        Optional<Archive> fromRepo = archiveRepository.findById(archive.getArchiveId());
+        assertFalse(fromRepo.isPresent());
     }
 }
