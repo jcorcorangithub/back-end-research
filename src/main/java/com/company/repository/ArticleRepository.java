@@ -9,5 +9,5 @@ import java.util.Optional;
 
 @Repository
 public interface ArticleRepository extends JpaRepository<Article, Integer>{
-    Optional<Article> findByArticleId(String articleId);
+    public Article findByArticleId(String articleId);
 }
