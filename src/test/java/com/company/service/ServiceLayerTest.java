@@ -13,7 +13,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -117,6 +119,14 @@ public class ServiceLayerTest {
     }
 
     @Test
+    public void shouldReturnAListOfUsersFromTheDatabase() {
+        when(userRepository.findAll()).thenReturn(users);
+
+        List<User> fromServiceUsers = service.findAllUsers();
+        assertEquals(fromServiceUsers.get(0).getUsername(), outputUser.getUsername());
+    }
+
+    @Test
     public void shouldUpdateAUserFromTheDatabase() {
         User updatedUser = new User("@johndoe123", "Jane", "Dawson", "janedawson@gmail.com", "password1");
 
@@ -139,17 +149,54 @@ public class ServiceLayerTest {
 
     @Test
     public void shouldStoreAnArticleToAUserInDatabase() {
+        when(articleRepository.findByArticleId(inputArticle.getArticleId())).thenReturn(outputArticle);
+        when(articleRepository.save(inputArticle)).thenReturn(outputArticle);
 
+        Article saveArticle = service.saveArticle(inputArticle);
+        Article fromServiceArticle = service.findArticle(inputArticle.getArticleId());
+        assertEquals(fromServiceArticle.getArticleId(), saveArticle.getArticleId());
     }
 
     @Test
     public void shouldReturnAnArticleFromTheDatabase() {
+        when(articleRepository.findByArticleId(inputArticle.getArticleId())).thenReturn(outputArticle);
 
+        Article fromServiceArticle = service.findArticle(inputArticle.getArticleId());
+        assertEquals(fromServiceArticle.getArticleId(), outputArticle.getArticleId());
+    }
+
+    @Test
+    public void shouldReturnAllArticlesFromTheDatabase() {
+        when(articleRepository.findAll()).thenReturn(articles);
+
+        List<Article> fromServiceArticles = service.findAllArticles();
+        assertEquals(fromServiceArticles.get(0).getArticleId(), outputArticle.getArticleId());
+    }
+
+    @Test
+    public void shouldReturnAllArticlesBelongingToAUser() {
+        List<Article> userArticlesList = new ArrayList<>(Arrays.asList(inputArticle));
+        when(articleRepository.findAll()).thenReturn(userArticlesList);
+        when(userRepository.findByUsername(outputUser.getUsername())).thenReturn(inputUser);
+
+        List<Article> fromServiceUserArticles = service.findUserArticles(outputUser.getUsername());
+        assertEquals(fromServiceUserArticles.get(0).getArticleId(), outputArticle.getArticleId());
     }
 
     @Test
     public void shouldDeleteAnArticleFromTheDatabase() {
+        Article articleToDelete = new Article(
+                "JC4Acibs_4kJ",
+                "@johndoe123",
+                "Population biology of plants.",
+                "https://www.cabdirect.org/cabdirect/abstract/19782321379",
+                "The first chapter is concerned with experiments, analogies and models.",
+                "JL Harper - Population biology of plants., 1977 - cabdirect.org"
+        );
 
+        when(articleRepository.findByArticleId(inputArticle.getArticleId())).thenReturn(articleToDelete);
+        doNothing().when(articleRepository).delete(articleToDelete);
+        service.deleteArticle(articleToDelete);
     }
 
     @Test

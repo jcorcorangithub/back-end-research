@@ -6,11 +6,14 @@ import com.company.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Component
 public class ServiceLayer {
     private ArchiveRepository archiveRepository;
     private ArticleRepository articleRepository;
-//    private MemberRepository memberRepository;
+    //    private MemberRepository memberRepository;
     private UserRepository userRepository;
 
     @Autowired
@@ -36,11 +39,15 @@ public class ServiceLayer {
         return foundUser;
     }
 
+    public List<User> findAllUsers() {
+        return userRepository.findAll();
+    }
+
     public User updateUser(User user) {
 
         User foundUser = userRepository.findByUsername(user.getUsername());
 
-        if(foundUser.getUsername() == null) {
+        if (foundUser.getUsername() == null) {
             throw new IllegalArgumentException("Cannot update, user does not exist in the database.");
         }
 
@@ -60,11 +67,11 @@ public class ServiceLayer {
     public void deleteUser(User user) {
         User foundUser = userRepository.findByUsername(user.getUsername());
 
-        if(foundUser.getUsername() == null) {
+        if (foundUser.getUsername() == null) {
             throw new IllegalArgumentException("Cannot delete, user does not exist in the database.");
         }
 
-    //  Delete a user
+        //  Delete a user
         userRepository.delete(foundUser);
     }
 
@@ -79,11 +86,32 @@ public class ServiceLayer {
         return foundArticle;
     }
 
+    public List<Article> findAllArticles() {
+        return articleRepository.findAll();
+    }
+
+    public List<Article> findUserArticles(String username) {
+        User foundUser = userRepository.findByUsername(username);
+
+        if (foundUser.getUsername() == null) {
+            throw new IllegalArgumentException("User does not exist in the database");
+        }
+
+        List<Article> articleList = articleRepository.findAll();
+
+        List<Article> userArticles = articleList
+                .stream()
+                .filter(a -> a.getUsername() == username)
+                .collect(Collectors.toList());
+
+        return userArticles;
+    }
+
     public void deleteArticle(Article article) {
 
         Article foundArticle = articleRepository.findByArticleId(article.getArticleId());
 
-        if(foundArticle.getArticleId() == null) {
+        if (foundArticle.getArticleId() == null) {
             throw new IllegalArgumentException("Cannot delete, article does not exist in database.");
         }
 
