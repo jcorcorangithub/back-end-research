@@ -24,10 +24,6 @@ public class ArchiveRepositoryTests {
     @Autowired
     ArchiveRepository archiveRepository;
 
-    private Archive archive;
-    private Archive archive2;
-
-
     private Archive inputArchive;
     private Archive outputArchive;
     private List<Archive> archives;
@@ -36,6 +32,8 @@ public class ArchiveRepositoryTests {
 
     @Before
     public void setUp() {
+        archiveRepository.deleteAll();
+
         //  Instantiate new Archive objects
         inputArchive = new Archive("Biology");
         outputArchive = new Archive();
@@ -45,20 +43,6 @@ public class ArchiveRepositoryTests {
         //  Instantiate new List of archives
         archives = new ArrayList<>();
         archives.add(inputArchive);
-    }
-
-
-    @Test
-    public void shouldUpdateArchive() {
-        archiveRepository.save(archive2);
-        archive.setArchiveId(1);
-        archive2.setArchiveName("Mock update");
-        archive = archiveRepository.save(archive2);
-    }
-
-    @Test
-    public void shouldDeleteArchive() {
-
     }
 
 
