@@ -164,19 +164,31 @@ public class ServiceLayerTest {
     public void shouldReturnAllArticlesBelongingToAnArchive() {
         // Instantiate the found article from inputArchive
         Article foundArticle = new Article(
-                1,
+                7,
                 "Population biology of plants.",
                 "https://www.cabdirect.org/cabdirect/abstract/19782321379",
                 "The first chapter is concerned with experiments, analogies and models.",
                 "JL Harper - Population biology of plants., 1977 - cabdirect.org"
         );
 
-        List<Article> archiveArticles = new ArrayList<>();
-        archiveArticles.add(foundArticle);
-        when(archiveRepository.findById(inputArchive.getArchiveId())).thenReturn(Optional.ofNullable(outputArchive));
-        when(articleRepository.findAllArticlesByArchive(inputArchive.getArchiveId())).thenReturn(archiveArticles);
+        //  Article's archive
+        Archive newArchive = new Archive("Biology");
+        newArchive.setArchiveId(7);
 
-        List<Article> fromServiceUserArticles = service.findArchiveArticles(inputArchive.getArchiveId());
+        // Archive's article set
+        Set<Article> archiveArticles = new HashSet<>();
+        archiveArticles.add(inputArticle);
+        newArchive.setArticles(archiveArticles);
+
+        archiveArticles.add(foundArticle);
+
+        List<Article> foundArticles = new ArrayList<>();
+        foundArticles.add(foundArticle);
+
+        when(archiveRepository.findById(newArchive.getArchiveId())).thenReturn(Optional.ofNullable(newArchive));
+        when(articleRepository.findAllArticlesByArchive(newArchive.getArchiveId())).thenReturn(foundArticles);
+
+        List<Article> fromServiceUserArticles = service.findArchiveArticles(newArchive.getArchiveId());
         assertEquals(fromServiceUserArticles.size(), archiveArticles.size());
     }
 
