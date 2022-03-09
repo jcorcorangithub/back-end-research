@@ -26,13 +26,14 @@ public class ArchiveRepositoryTests {
 
     @Before
     public void setUp() {
-        archiveRepository.deleteAll();
+     //   archiveRepository.deleteAll();
 
+        archive = new Archive();
         archive.setArchiveName("Test");
         archive.setUsername("Tester");
 
-        archive2.setArchiveName("Mock");
-        archive2.setUsername("Mocker");
+//        archive2.setArchiveName("Mock");
+//        archive2.setUsername("Mocker");
     }
 
     @Test

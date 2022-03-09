@@ -14,18 +14,18 @@ import javax.transaction.Transactional;
 public class ServiceLayer {
     private ArchiveRepository archiveRepository;
     private ArticleRepository articleRepository;
-    private MemberRepository memberRepository;
+//    private MemberRepository memberRepository;
     private UserRepository userRepository;
 
     @Autowired
     public ServiceLayer(
             ArchiveRepository archiveRepository,
             ArticleRepository articleRepository,
-            MemberRepository memberRepository,
+//            MemberRepository memberRepository,
             UserRepository userRepository) {
         this.archiveRepository = archiveRepository;
         this.articleRepository = articleRepository;
-        this.memberRepository = memberRepository;
+//        this.memberRepository = memberRepository;
         this.userRepository = userRepository;
     }
 

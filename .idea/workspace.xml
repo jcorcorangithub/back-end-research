@@ -4,18 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c05bee71-4cb2-4e89-98eb-1855734b9c56" name="Changes" comment="">
+    <list default="true" id="92fb2769-7124-4a6b-a1d8-2816b903209c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/controller/ArticleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/controller/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/repository/ArticleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/repository/ArticleRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/repository/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/repository/MemberRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/service/ServiceLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/service/ServiceLayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/viewmodel/ArchiveViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/viewmodel/ArchiveViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/company/repository/ArchiveRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/company/repository/ArchiveRepositoryTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/company/repository/ArticleRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/company/repository/ArticleRepositoryTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/company/repository/UserRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/company/repository/UserRepositoryTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/company/service/ServiceLayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/company/service/ServiceLayerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/application.properties" afterDir="false" />
-
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/controller/UserController.java" afterDir="false" />
-
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,15 +45,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-
     <setting file="file://$PROJECT_DIR$/src/main/java/com/company/repository/ArticleRepository.java" root0="FORCE_HIGHLIGHTING" />
-
     <setting file="file://$PROJECT_DIR$/src/main/java/com/company/repository/UserRepository.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/company/model/Archive.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/.gitignore" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/company/model/Member.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/company/model/Archive.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/company/repository/ArchiveRepository.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/company/repository/ArticleRepository.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
@@ -90,12 +94,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Java Workspace/M3/04-service-layer-mocks-lesson" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Java Workspace/M3/SimpleCrmApi" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -103,12 +103,65 @@
       <recent name="com.company" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ServiceLayerTest.shouldSaveUserToDatabase">
-    <configuration name="AppTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ArchiveRepositoryTests.shouldAddAndGetArchiveByArchiveIdFromDatabase">
+    <configuration name="ArchiveRepositoryTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="record-collection" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AppTests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.company.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.company.repository.ArchiveRepositoryTests" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ArchiveRepositoryTests.shouldAddAndGetArchiveByArchiveIdFromDatabase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="record-collection" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.company.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.company.repository.ArchiveRepositoryTests" />
+      <option name="METHOD_NAME" value="shouldAddAndGetArchiveByArchiveIdFromDatabase" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ArticleRepositoryTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="record-collection" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.company.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.company.repository.ArticleRepositoryTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ArticleRepositoryTests.shouldGetArticleByArticleIdFromDatabase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="record-collection" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.company.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.company.repository.ArticleRepositoryTests" />
+      <option name="METHOD_NAME" value="shouldGetArticleByArticleIdFromDatabase" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -128,34 +181,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ServiceLayerTest.shouldSaveUserToDatabase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="record-collection" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.company.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.company.service" />
-      <option name="MAIN_CLASS_NAME" value="com.company.service.ServiceLayerTest" />
-      <option name="METHOD_NAME" value="shouldSaveUserToDatabase" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ServiceLayerTest.shouldSaveUserToDatabase" />
+        <item itemvalue="JUnit.ArchiveRepositoryTests.shouldAddAndGetArchiveByArchiveIdFromDatabase" />
+        <item itemvalue="JUnit.ArchiveRepositoryTests" />
+        <item itemvalue="JUnit.ArticleRepositoryTests.shouldGetArticleByArticleIdFromDatabase" />
         <item itemvalue="JUnit.ServiceLayerTest" />
-        <item itemvalue="JUnit.AppTests" />
+        <item itemvalue="JUnit.ArticleRepositoryTests" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c05bee71-4cb2-4e89-98eb-1855734b9c56" name="Changes" comment="" />
+      <changelist id="92fb2769-7124-4a6b-a1d8-2816b903209c" name="Changes" comment="" />
       <created>1646668719226</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />

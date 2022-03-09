@@ -2,7 +2,7 @@ package com.company.service;
 
 import com.company.model.Archive;
 import com.company.model.Article;
-import com.company.model.Member;
+//import com.company.model.Member;
 import com.company.model.User;
 import com.company.repository.*;
 import org.junit.Before;
@@ -40,7 +40,7 @@ public class ServiceLayerTest {
     ArchiveRepository archiveRepository;
 
     @MockBean
-    MemberRepository memberRepository;
+//    MemberRepository memberRepository;
 
     //    Declare input & output objects
     User inputUser;
@@ -54,10 +54,10 @@ public class ServiceLayerTest {
     Archive inputArchive;
     Archive outputArchive;
     List<Archive> archives;
-
-    Member inputMember;
-    Member outputMember;
-    List<Member> members;
+//
+//    Member inputMember;
+//    Member outputMember;
+//    List<Member> members;
 
     @Before
     public void setUp() throws Exception {
@@ -92,10 +92,10 @@ public class ServiceLayerTest {
         archives.add(outputArchive);
 
         //   Member
-        inputMember = new Member(outputUser, 1);
-        outputMember = new Member(outputUser, 1);
-        members = new ArrayList<>();
-        members.add(outputMember);
+//        inputMember = new Member(outputUser, 1);
+//        outputMember = new Member(outputUser, 1);
+//        members = new ArrayList<>();
+//        members.add(outputMember);
     }
 
     @Test
