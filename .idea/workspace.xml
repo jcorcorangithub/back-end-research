@@ -98,7 +98,7 @@
       <recent name="com.company" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ServiceLayerTest.shouldReturnAllArchivesInTheDatabase">
+  <component name="RunManager" selected="JUnit.ServiceLayerTest.shouldDeleteAnArchiveInTheDatabase">
     <configuration name="ServiceLayerTest.shouldCreateANewArchiveToDatabase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="record-collection" />
       <extension name="coverage">
@@ -115,7 +115,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ServiceLayerTest.shouldDeleteAnArticleFromTheDatabase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ServiceLayerTest.shouldDeleteAnArchiveInTheDatabase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="record-collection" />
       <extension name="coverage">
         <pattern>
@@ -125,7 +125,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.company.service" />
       <option name="MAIN_CLASS_NAME" value="com.company.service.ServiceLayerTest" />
-      <option name="METHOD_NAME" value="shouldDeleteAnArticleFromTheDatabase" />
+      <option name="METHOD_NAME" value="shouldDeleteAnArchiveInTheDatabase" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -181,11 +181,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ServiceLayerTest.shouldDeleteAnArchiveInTheDatabase" />
         <item itemvalue="JUnit.ServiceLayerTest.shouldReturnAllArchivesInTheDatabase" />
         <item itemvalue="JUnit.ServiceLayerTest.shouldFindAnArchiveByArchiveIdInTheDatabase" />
         <item itemvalue="JUnit.ServiceLayerTest.shouldCreateANewArchiveToDatabase" />
         <item itemvalue="JUnit.ServiceLayerTest.shouldUpdateAnArchiveNameInDatabase" />
-        <item itemvalue="JUnit.ServiceLayerTest.shouldDeleteAnArticleFromTheDatabase" />
       </list>
     </recent_temporary>
   </component>

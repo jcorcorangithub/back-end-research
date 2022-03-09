@@ -134,7 +134,7 @@ public class ServiceLayerTest {
 
         when(archiveRepository.findById(outputArchive.getArchiveId())).thenReturn(Optional.ofNullable(outputArchive));
         doNothing().when(archiveRepository).delete(outputArchive);
-        service.deleteArticle(outputArticle);
+        service.deleteArchive(outputArchive);
     }
 
     @Test
