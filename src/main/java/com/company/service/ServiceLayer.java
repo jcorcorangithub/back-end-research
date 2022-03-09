@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Component
 public class ServiceLayer {
@@ -20,6 +19,7 @@ public class ServiceLayer {
         this.articleRepository = articleRepository;
     }
 
+    //    Archive ServiceLayer Tests
     public Archive saveArchive(Archive archive) {
         return archiveRepository.save(archive);
     }
@@ -81,6 +81,7 @@ public class ServiceLayer {
     }
 
     public List<Article> findArchiveArticles(int archiveId) {
+
         Archive foundArchive = archiveRepository.findById(archiveId).get();
 
         if (foundArchive.getArchiveName() == null) {
