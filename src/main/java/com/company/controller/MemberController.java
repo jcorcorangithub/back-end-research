@@ -1,8 +1,13 @@
 //package com.company.controller;
 //
 //
+<<<<<<< HEAD
 ////import com.company.model.Member;
 ////import com.company.repository.MemberRepository;
+=======
+//import com.company.model.Member;
+//import com.company.repository.MemberRepository;
+>>>>>>> b8bce71aa09de58212bfb6a6735dfb3c67186678
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.web.bind.annotation.*;
 //

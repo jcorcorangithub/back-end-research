@@ -53,11 +53,16 @@ public class ArchiveViewModel {
 //    public List<Member> getMembers() {
 //        return members;
 //    }
+<<<<<<< HEAD
 //
+=======
+
+>>>>>>> b8bce71aa09de58212bfb6a6735dfb3c67186678
 //    public void setMembers(List<Member> members) {
 //        this.members = members;
 //    }
 
+<<<<<<< HEAD
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -81,4 +86,29 @@ public class ArchiveViewModel {
               //  ", members=" + members +
                 '}';
     }
+=======
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        ArchiveViewModel that = (ArchiveViewModel) o;
+//        return id == that.id && Objects.equals(title, that.title) && Objects.equals(user, that.user) && Objects.equals(articles, that.articles) && Objects.equals(members, that.members);
+//    }
+
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(id, title, user, articles, members);
+//    }
+
+//    @Override
+//    public String toString() {
+//        return "ArchiveViewModel{" +
+//                "id=" + id +
+//                ", title='" + title + '\'' +
+//                ", user=" + user +
+//                ", articles=" + articles +
+//                ", members=" + members +
+//                '}';
+//    }
+>>>>>>> b8bce71aa09de58212bfb6a6735dfb3c67186678
 }

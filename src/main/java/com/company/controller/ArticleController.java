@@ -21,9 +21,9 @@ public class ArticleController {
 
         @GetMapping("/article/{articleId}") // find article by String articleId
         public Article getArticleById(@PathVariable String articleId) {
-               Optional <Article> article = articleRepository.findByArticleId(articleId);
+               Article article = articleRepository.findByArticleId(articleId);
 
-                return article.orElse(null);
+                return article;
         }
 
         @DeleteMapping("article/{articleId}")
