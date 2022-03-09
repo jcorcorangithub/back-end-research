@@ -13,7 +13,11 @@ import java.util.stream.Collectors;
 public class ServiceLayer {
     private ArchiveRepository archiveRepository;
     private ArticleRepository articleRepository;
+<<<<<<< HEAD
+//    private MemberRepository memberRepository;
+=======
     //    private MemberRepository memberRepository;
+>>>>>>> b8bce71aa09de58212bfb6a6735dfb3c67186678
     private UserRepository userRepository;
 
     @Autowired

@@ -3,18 +3,19 @@ package com.company.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Objects;
 
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Table(name = "article")
-public class Article {
+public class Article implements Serializable {
 
     @Id
     @Column(name = "article_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String articleId;
+    private String articleId=null;
     private String username;
     private String title;
     private String link;

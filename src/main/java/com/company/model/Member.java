@@ -11,7 +11,12 @@
 //
 //@Entity
 //@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+<<<<<<< HEAD
+//@Table(name = "member")
+//
+=======
 ////@Table(name = "member")
+>>>>>>> b8bce71aa09de58212bfb6a6735dfb3c67186678
 //public class Member extends User {
 //
 //    @Id@GeneratedValue(strategy = GenerationType.AUTO)
