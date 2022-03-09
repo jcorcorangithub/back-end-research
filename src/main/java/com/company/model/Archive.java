@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.Objects;
+import java.util.Set;
+
+import static javax.persistence.CascadeType.ALL;
 
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
@@ -15,11 +18,12 @@ public class Archive {
     @Column(name = "archive_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int archiveId;
-    private String username;
     private String archiveName;
 
-    public Archive(String username, String archiveName) {
-        this.username = username;
+    @OneToMany(cascade=ALL, mappedBy="archiveId")
+    public Set<Article> articles;
+
+    public Archive(String archiveName) {
         this.archiveName = archiveName;
     }
 
@@ -33,14 +37,6 @@ public class Archive {
         this.archiveId = archiveId;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     public String getArchiveName() {
         return archiveName;
     }
@@ -49,26 +45,33 @@ public class Archive {
         this.archiveName = archiveName;
     }
 
+    public Set<Article> getArticles() {
+        return articles;
+    }
+
+    public void setArticles(Set<Article> articles) {
+        this.articles = articles;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Archive archive = (Archive) o;
-        return archiveId == archive.archiveId && Objects.equals(username, archive.username) && Objects.equals(archiveName, archive.archiveName);
+        return archiveId == archive.archiveId && Objects.equals(archiveName, archive.archiveName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(archiveId, username, archiveName);
+        return Objects.hash(archiveId, archiveName);
     }
 
     @Override
     public String toString() {
         return "Archive{" +
                 "archiveId=" + archiveId +
-                ", username='" + username + '\'' +
                 ", archiveName='" + archiveName + '\'' +
+                ", articles=" + articles +
                 '}';
     }
-    //comment
 }

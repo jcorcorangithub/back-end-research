@@ -20,8 +20,8 @@ public class ArticleController {
         }
 
         @GetMapping("/article/{articleId}") // find article by String articleId
-        public Article getArticleById(@PathVariable String articleId) {
-               Article article = articleRepository.findByArticleId(articleId);
+        public Article getArticleById(@PathVariable int articleId) {
+               Article article = articleRepository.findById(articleId).get();
 
                 return article;
         }

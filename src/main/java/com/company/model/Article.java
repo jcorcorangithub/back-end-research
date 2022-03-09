@@ -3,7 +3,6 @@ package com.company.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
-import java.util.Arrays;
 import java.util.Objects;
 
 @Entity
@@ -13,38 +12,43 @@ public class Article {
 
     @Id
     @Column(name = "article_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String articleId;
-    private String username;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int articleId;
+    private int archiveId;
     private String title;
     private String link;
     private String snippet;
     private String summary;
 
-    public Article(String articleId, String username, String title, String link, String snippet, String summary) {
-        this.articleId = articleId;
-        this.username = username;
+
+    @ManyToOne
+    @JoinColumn(name="archiveId", nullable=false, insertable = false, updatable = false)
+    private Archive archive;
+
+    public Article(int archiveId, String title, String link, String snippet, String summary) {
+        this.archiveId = archiveId;
         this.title = title;
         this.link = link;
         this.snippet = snippet;
         this.summary = summary;
     }
+
     public Article(){};
 
-    public String getArticleId() {
+    public int getArticleId() {
         return articleId;
     }
 
-    public void setArticleId(String articleId) {
+    public void setArticleId(int articleId) {
         this.articleId = articleId;
     }
 
-    public String getUsername() {
-        return username;
+    public int getArchiveId() {
+        return archiveId;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setArchiveId(int archiveId) {
+        this.archiveId = archiveId;
     }
 
     public String getTitle() {
@@ -79,28 +83,37 @@ public class Article {
         this.summary = summary;
     }
 
+    public Archive getArchive() {
+        return archive;
+    }
+
+    public void setArchive(Archive archive) {
+        this.archive = archive;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Article article = (Article) o;
-        return Objects.equals(articleId, article.articleId) && Objects.equals(username, article.username) && Objects.equals(title, article.title) && Objects.equals(link, article.link) && Objects.equals(snippet, article.snippet) && Objects.equals(summary, article.summary);
+        return articleId == article.articleId && Objects.equals(archiveId, article.archiveId) && Objects.equals(title, article.title) && Objects.equals(link, article.link) && Objects.equals(snippet, article.snippet) && Objects.equals(summary, article.summary);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(articleId, username, title, link, snippet, summary);
+        return Objects.hash(articleId, archiveId, title, link, snippet, summary);
     }
 
     @Override
     public String toString() {
         return "Article{" +
-                "articleId='" + articleId + '\'' +
-                ", username='" + username + '\'' +
+                "articleId=" + articleId +
+                ", archiveId='" + archiveId + '\'' +
                 ", title='" + title + '\'' +
                 ", link='" + link + '\'' +
                 ", snippet='" + snippet + '\'' +
                 ", summary='" + summary + '\'' +
+//                ", archive=" + archive +
                 '}';
     }
 }
