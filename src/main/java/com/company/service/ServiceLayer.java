@@ -87,14 +87,9 @@ public class ServiceLayer {
             throw new IllegalArgumentException("Archive does not exist in the database");
         }
 
-        List<Article> articleList = articleRepository.findAll();
+        List<Article> articleList = articleRepository.findAllArticlesByArchive(archiveId);
 
-        List<Article> archiveArticles = articleList
-                .stream()
-                .filter(a -> a.getArchiveId() == archiveId)
-                .collect(Collectors.toList());
-
-        return archiveArticles;
+        return articleList;
     }
 
     public void deleteArticle(Article article) {

@@ -168,13 +168,22 @@ public class ServiceLayerTest {
 
     @Test
     public void shouldReturnAllArticlesBelongingToAnArchive() {
+        // Instantiate the found article from inputArchive
+        Article foundArticle = new Article(
+                1,
+                "Population biology of plants.",
+                "https://www.cabdirect.org/cabdirect/abstract/19782321379",
+                "The first chapter is concerned with experiments, analogies and models.",
+                "JL Harper - Population biology of plants., 1977 - cabdirect.org"
+        );
 
-        List<Article> archiveArticlesList = new ArrayList<>(Arrays.asList(inputArticle));
-        when(articleRepository.findAll()).thenReturn(archiveArticlesList);
+        List<Article> archiveArticles = new ArrayList<>();
+        archiveArticles.add(foundArticle);
         when(archiveRepository.findById(inputArchive.getArchiveId())).thenReturn(Optional.ofNullable(outputArchive));
+        when(articleRepository.findAllArticlesByArchive(inputArchive.getArchiveId())).thenReturn(archiveArticles);
 
-        List<Article> fromServiceUserArticles = service.findArchiveArticles(outputArchive.getArchiveId());
-        assertEquals(fromServiceUserArticles.get(0).getArticleId(), outputArticle.getArticleId());
+        List<Article> fromServiceUserArticles = service.findArchiveArticles(inputArchive.getArchiveId());
+        assertEquals(fromServiceUserArticles.size(), archiveArticles.size());
     }
 
     @Test

@@ -6,20 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c05bee71-4cb2-4e89-98eb-1855734b9c56" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/controller/ArchiveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/controller/ArchiveController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/controller/ArticleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/controller/MemberController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Archive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Archive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Article.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Member.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/repository/ArchiveRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/repository/ArchiveRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/repository/ArticleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/repository/ArticleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/repository/MemberRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/repository/UserRepository.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/service/ServiceLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/service/ServiceLayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/viewmodel/ArchiveViewModel.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/company/service/ServiceLayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/company/service/ServiceLayerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +78,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../InClassProjects/WorkFolder/M3/03-java-sql-lesson/activities/01-we-simple-crm/complete/simple-crm-api-solution" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../InClassProjects/WorkFolder/M3/04-service-layer-mocks-lesson/activities/02-we-mocks/complete/record-collection" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -98,8 +86,8 @@
       <recent name="com.company" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ServiceLayerTest.shouldDeleteAnArchiveInTheDatabase">
-    <configuration name="ServiceLayerTest.shouldCreateANewArchiveToDatabase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ServiceLayerTest.shouldReturnAllArticlesBelongingToAnArchive">
+    <configuration name="ServiceLayerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="record-collection" />
       <extension name="coverage">
         <pattern>
@@ -109,8 +97,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.company.service" />
       <option name="MAIN_CLASS_NAME" value="com.company.service.ServiceLayerTest" />
-      <option name="METHOD_NAME" value="shouldCreateANewArchiveToDatabase" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -163,7 +150,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ServiceLayerTest.shouldUpdateAnArchiveNameInDatabase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ServiceLayerTest.shouldReturnAllArticlesBelongingToAnArchive" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="record-collection" />
       <extension name="coverage">
         <pattern>
@@ -173,7 +160,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.company.service" />
       <option name="MAIN_CLASS_NAME" value="com.company.service.ServiceLayerTest" />
-      <option name="METHOD_NAME" value="shouldUpdateAnArchiveNameInDatabase" />
+      <option name="METHOD_NAME" value="shouldReturnAllArticlesBelongingToAnArchive" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -181,11 +168,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ServiceLayerTest.shouldReturnAllArticlesBelongingToAnArchive" />
+        <item itemvalue="JUnit.ServiceLayerTest" />
         <item itemvalue="JUnit.ServiceLayerTest.shouldDeleteAnArchiveInTheDatabase" />
         <item itemvalue="JUnit.ServiceLayerTest.shouldReturnAllArchivesInTheDatabase" />
         <item itemvalue="JUnit.ServiceLayerTest.shouldFindAnArchiveByArchiveIdInTheDatabase" />
-        <item itemvalue="JUnit.ServiceLayerTest.shouldCreateANewArchiveToDatabase" />
-        <item itemvalue="JUnit.ServiceLayerTest.shouldUpdateAnArchiveNameInDatabase" />
       </list>
     </recent_temporary>
   </component>

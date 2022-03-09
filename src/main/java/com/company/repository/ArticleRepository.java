@@ -8,4 +8,6 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface ArticleRepository extends JpaRepository<Article, Integer>{}
+public interface ArticleRepository extends JpaRepository<Article, Integer>{
+    List<Article> findAllArticlesByArchive(int archiveId);
+}
