@@ -2,8 +2,6 @@ package com.company.service;
 
 import com.company.model.Archive;
 import com.company.model.Article;
-//import com.company.model.Member;
-import com.company.model.User;
 import com.company.repository.*;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,10 +11,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import javax.swing.text.html.Option;
+import java.util.*;
+import java.util.stream.Collectors;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.doNothing;
@@ -30,27 +27,15 @@ public class ServiceLayerTest {
     @Autowired
     ServiceLayer service;
 
-    //    Declare mockbean repositories
-    @MockBean
-    UserRepository userRepository;
-
+    //    Declare mock repositories for Archive & Article
     @MockBean
     ArticleRepository articleRepository;
 
     @MockBean
     ArchiveRepository archiveRepository;
 
-<<<<<<< HEAD
-    @MockBean
-=======
-//    @MockBean
->>>>>>> b8bce71aa09de58212bfb6a6735dfb3c67186678
-//    MemberRepository memberRepository;
 
-    //    Declare input & output objects
-    User inputUser;
-    User outputUser;
-    List<User> users;
+    @MockBean
 
     Article inputArticle;
     Article outputArticle;
@@ -59,105 +44,99 @@ public class ServiceLayerTest {
     Archive inputArchive;
     Archive outputArchive;
     List<Archive> archives;
-<<<<<<< HEAD
-//
-=======
-
->>>>>>> b8bce71aa09de58212bfb6a6735dfb3c67186678
-//    Member inputMember;
-//    Member outputMember;
-//    List<Member> members;
 
     @Before
     public void setUp() throws Exception {
         //  Initialize input objects & output objects
 
-        //  User
-        inputUser = new User("@johndoe123", "John", "Doe", "johndoe@gmail.com", "password1");
-        outputUser = new User();
-        outputUser.setUsername("@johndoe123");
-        users = new ArrayList<>();
-        users.add(outputUser);
-
         //   Article
         inputArticle = new Article(
-                "JC4Acibs_4kJ",
-                "@johndoe123",
+                1,
                 "Population biology of plants.",
                 "https://www.cabdirect.org/cabdirect/abstract/19782321379",
                 "The first chapter is concerned with experiments, analogies and models.",
                 "JL Harper - Population biology of plants., 1977 - cabdirect.org"
         );
         outputArticle = new Article();
-        outputArticle.setArticleId("JC4Acibs_4kJ");
+        outputArticle.setArticleId(1);
         articles = new ArrayList<>();
         articles.add(outputArticle);
 
+        // Article set
+        Set<Article> archiveArticles = new HashSet<>();
+        archiveArticles.add(inputArticle);
+
         //   Archive
-        inputArchive = new Archive("@johndoe123", "Biology");
+        inputArchive = new Archive("Biology");
+        inputArchive.setArticles(archiveArticles);
+
         outputArchive = new Archive();
         outputArchive.setArchiveId(1);
+        outputArchive.setArchiveName("Biology");
+        outputArchive.setArticles(archiveArticles);
+
         archives = new ArrayList<>();
         archives.add(outputArchive);
-
-        //   Member
-//        inputMember = new Member(outputUser, 1);
-//        outputMember = new Member(outputUser, 1);
-//        members = new ArrayList<>();
-//        members.add(outputMember);
     }
 
     @Test
-    public void shouldSaveUserToDatabase() {
-        //      Pass input user to service
-        when(userRepository.save(inputUser)).thenReturn(outputUser);
-        when(userRepository.findByUsername(outputUser.getUsername())).thenReturn(outputUser);
+    public void shouldCreateANewArchiveToDatabase() {
 
-        User savedUser = service.saveUser(inputUser);
-        User fromServiceUser = service.findUser(savedUser.getUsername());
-        assertEquals(fromServiceUser.getUsername(), outputUser.getUsername());
+        when(archiveRepository.save(inputArchive)).thenReturn(outputArchive);
+
+        Archive fromServiceArchive = service.saveArchive(inputArchive);
+        assertEquals(fromServiceArchive.getArchiveId(), outputArticle.getArticleId());
     }
 
     @Test
-    public void shouldReturnAUserFromTheDatabase() {
-        when(userRepository.findByUsername(outputUser.getUsername())).thenReturn(outputUser);
+    public void shouldFindAnArchiveByArchiveIdInTheDatabase() {
 
-        User fromServiceUser = service.findUser(outputUser.getUsername());
-        assertEquals(fromServiceUser.getUsername(), outputUser.getUsername());
+        when(archiveRepository.findById(inputArchive.getArchiveId())).thenReturn(Optional.ofNullable(outputArchive));
+
+        Archive fromServiceArchive = service.findArchive(inputArchive.getArchiveId());
+        assertEquals(fromServiceArchive.getArchiveId(), outputArchive.getArchiveId());
     }
 
     @Test
-    public void shouldReturnAListOfUsersFromTheDatabase() {
-        when(userRepository.findAll()).thenReturn(users);
+    public void shouldReturnAllArchivesInTheDatabase() {
 
-        List<User> fromServiceUsers = service.findAllUsers();
-        assertEquals(fromServiceUsers.get(0).getUsername(), outputUser.getUsername());
+        when(archiveRepository.findAll()).thenReturn(archives);
+
+        List<Archive> fromServiceArchives = archiveRepository.findAll();
+        assertEquals(fromServiceArchives.size(), archives.size());
     }
 
     @Test
-    public void shouldUpdateAUserFromTheDatabase() {
-        User updatedUser = new User("@johndoe123", "Jane", "Dawson", "janedawson@gmail.com", "password1");
+    public void shouldUpdateAnArchiveNameInDatabase() {
 
-        when(userRepository.findByUsername(updatedUser.getUsername())).thenReturn(inputUser);
-        when(userRepository.save(updatedUser)).thenReturn(updatedUser);
+        Archive updatedArchive = new Archive();
+        updatedArchive.setArchiveId(outputArchive.getArchiveId());
+        updatedArchive.setArchiveName("Psychology");
+        updatedArchive.setArticles(inputArchive.getArticles());
 
-        User fromServiceUpdatedUser = service.updateUser(updatedUser);
-        assertEquals(fromServiceUpdatedUser.getUsername(), updatedUser.getUsername());
+        when(archiveRepository.findById(outputArchive.getArchiveId())).thenReturn(Optional.ofNullable(outputArchive));
+        when(archiveRepository.save(updatedArchive)).thenReturn(updatedArchive);
+
+        Archive foundArchive = archiveRepository.findById(outputArchive.getArchiveId()).get();
+
+        Archive fromServiceUpdatedArchive = service.updateArchive(updatedArchive);
+
+        assertEquals(fromServiceUpdatedArchive.getArchiveId(), foundArchive.getArchiveId());
+        assertEquals(fromServiceUpdatedArchive.getArticles().size(), foundArchive.getArticles().size());
     }
 
     @Test
-    public void shouldDeleteAUserFromTheDatabase() {
-        User foundUser = new User("@johndoe123", "John", "Doe", "johndoe@gmail.com", "password1");
+    public void shouldDeleteAnArchiveInTheDatabase() {
 
-        when(userRepository.findByUsername(inputUser.getUsername())).thenReturn(foundUser);
-        doNothing().when(userRepository).delete(foundUser);
-
-        service.deleteUser(foundUser);
+        when(archiveRepository.findById(outputArchive.getArchiveId())).thenReturn(Optional.ofNullable(outputArchive));
+        doNothing().when(archiveRepository).delete(outputArchive);
+        service.deleteArchive(outputArchive.getArchiveId());
     }
 
     @Test
-    public void shouldStoreAnArticleToAUserInDatabase() {
-        when(articleRepository.findByArticleId(inputArticle.getArticleId())).thenReturn(outputArticle);
+    public void shouldSaveAnArticleToAnArchiveInDatabase() {
+
+        when(articleRepository.findById(inputArticle.getArticleId())).thenReturn(Optional.ofNullable(outputArticle));
         when(articleRepository.save(inputArticle)).thenReturn(outputArticle);
 
         Article saveArticle = service.saveArticle(inputArticle);
@@ -167,7 +146,8 @@ public class ServiceLayerTest {
 
     @Test
     public void shouldReturnAnArticleFromTheDatabase() {
-        when(articleRepository.findByArticleId(inputArticle.getArticleId())).thenReturn(outputArticle);
+
+        when(articleRepository.findById(inputArticle.getArticleId())).thenReturn(Optional.ofNullable(outputArticle));
 
         Article fromServiceArticle = service.findArticle(inputArticle.getArticleId());
         assertEquals(fromServiceArticle.getArticleId(), outputArticle.getArticleId());
@@ -175,6 +155,7 @@ public class ServiceLayerTest {
 
     @Test
     public void shouldReturnAllArticlesFromTheDatabase() {
+
         when(articleRepository.findAll()).thenReturn(articles);
 
         List<Article> fromServiceArticles = service.findAllArticles();
@@ -182,58 +163,48 @@ public class ServiceLayerTest {
     }
 
     @Test
-    public void shouldReturnAllArticlesBelongingToAUser() {
-        List<Article> userArticlesList = new ArrayList<>(Arrays.asList(inputArticle));
-        when(articleRepository.findAll()).thenReturn(userArticlesList);
-        when(userRepository.findByUsername(outputUser.getUsername())).thenReturn(inputUser);
-
-        List<Article> fromServiceUserArticles = service.findUserArticles(outputUser.getUsername());
-        assertEquals(fromServiceUserArticles.get(0).getArticleId(), outputArticle.getArticleId());
-    }
-
-    @Test
-    public void shouldDeleteAnArticleFromTheDatabase() {
-        Article articleToDelete = new Article(
-                "JC4Acibs_4kJ",
-                "@johndoe123",
+    public void shouldReturnAllArticlesBelongingToAnArchive() {
+        // Instantiate the found article from inputArchive
+        Article foundArticle = new Article(
+                7,
                 "Population biology of plants.",
                 "https://www.cabdirect.org/cabdirect/abstract/19782321379",
                 "The first chapter is concerned with experiments, analogies and models.",
                 "JL Harper - Population biology of plants., 1977 - cabdirect.org"
         );
 
-        when(articleRepository.findByArticleId(inputArticle.getArticleId())).thenReturn(articleToDelete);
+        //  Article's archive
+        Archive newArchive = new Archive("Biology");
+        newArchive.setArchiveId(7);
+
+        // Archive's article set
+        Set<Article> archiveArticles = new HashSet<>();
+        archiveArticles.add(foundArticle);
+        newArchive.setArticles(archiveArticles);
+
+        List<Article> foundArticles = new ArrayList<>();
+        foundArticles.add(foundArticle);
+
+        when(archiveRepository.findById(newArchive.getArchiveId())).thenReturn(Optional.ofNullable(newArchive));
+        when(articleRepository.findAllArticlesByArchive(newArchive.getArchiveId())).thenReturn(foundArticles);
+
+        List<Article> fromServiceUserArticles = service.findArchiveArticles(newArchive.getArchiveId());
+        assertEquals(fromServiceUserArticles.size(), archiveArticles.size());
+    }
+
+    @Test
+    public void shouldDeleteAnArticleFromTheDatabase() {
+
+        Article articleToDelete = new Article(
+                40,
+                "Population biology of plants.",
+                "https://www.cabdirect.org/cabdirect/abstract/19782321379",
+                "The first chapter is concerned with experiments, analogies and models.",
+                "JL Harper - Population biology of plants., 1977 - cabdirect.org"
+        );
+
+        when(articleRepository.findById(inputArticle.getArticleId())).thenReturn(Optional.ofNullable(articleToDelete));
         doNothing().when(articleRepository).delete(articleToDelete);
-        service.deleteArticle(articleToDelete);
-    }
-
-    @Test
-    public void shouldCreateANewArchiveToDatabase() {
-
-    }
-
-    @Test
-    public void shouldUpdateAnArchiveNameInDatabase() {
-
-    }
-
-    @Test
-    public void shouldDeleteAnArchiveInTheDatabase() {
-
-    }
-
-    @Test
-    public void shouldSaveAnArticleToAnArchive() {
-
-    }
-
-    @Test
-    public void shouldCreateANewArchiveMember() {
-
-    }
-
-    @Test
-    public void shouldDeleteAnArchiveMember() {
-
+        service.deleteArticle(articleToDelete.getArticleId());
     }
 }

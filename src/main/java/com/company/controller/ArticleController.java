@@ -19,17 +19,19 @@ public class ArticleController {
                 return articleRepository.findAll();
         }
 
-        @GetMapping("/article/{articleId}") // find article by String articleId
-        public Article getArticleById(@PathVariable String articleId) {
-               Article article = articleRepository.findByArticleId(articleId);
+        @GetMapping("/article/{articleId}") // find article by articleId
+        public Article getArticleById(@PathVariable int articleId) {
 
-                return article;
+                Optional<Article> article = articleRepository.findById(articleId);
+
+                if (!article.isPresent()) {
+                        return null;
+                }
+                return article.get();
         }
 
         @DeleteMapping("article/{articleId}")
-        public void deleteArticleById(@PathVariable int id) {
-                articleRepository.deleteById(id);
+        public void deleteArticleById(@PathVariable int articleId) {
+                articleRepository.deleteById(articleId);
         }
-
-
 }

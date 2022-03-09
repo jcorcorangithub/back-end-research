@@ -44,7 +44,6 @@ public class ArchiveController {
             throw new IllegalArgumentException("Archive ID must match parameter given!");
         }
         foundArchive.get().setArchiveId(archive.getArchiveId());
-        foundArchive.get().setUsername(archive.getUsername());
         foundArchive.get().setArchiveName(archive.getArchiveName());
         return archiveRepository.save(foundArchive.get());
     }

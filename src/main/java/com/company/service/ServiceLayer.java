@@ -1,11 +1,13 @@
 package com.company.service;
 
+import com.company.model.Archive;
 import com.company.model.Article;
-import com.company.model.User;
 import com.company.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -13,66 +15,57 @@ import java.util.stream.Collectors;
 public class ServiceLayer {
     private ArchiveRepository archiveRepository;
     private ArticleRepository articleRepository;
-    //    private MemberRepository memberRepository;
-    private UserRepository userRepository;
 
     @Autowired
-    public ServiceLayer(
-            ArchiveRepository archiveRepository,
-            ArticleRepository articleRepository,
-//            MemberRepository memberRepository,
-            UserRepository userRepository) {
+    public ServiceLayer( ArchiveRepository archiveRepository, ArticleRepository articleRepository) {
         this.archiveRepository = archiveRepository;
         this.articleRepository = articleRepository;
-//        this.memberRepository = memberRepository;
-        this.userRepository = userRepository;
     }
 
-    public User saveUser(User user) {
-
-        return userRepository.save(user);
+    //    Archive ServiceLayer Tests
+    public Archive saveArchive(Archive archive) {
+        return archiveRepository.save(archive);
     }
 
-    public User findUser(String username) {
+    public Archive findArchive(int id) {
 
-        User foundUser = userRepository.findByUsername(username);
-        return foundUser;
-    }
+        Archive foundArchive = archiveRepository.findById(id).get();
 
-    public List<User> findAllUsers() {
-        return userRepository.findAll();
-    }
-
-    public User updateUser(User user) {
-
-        User foundUser = userRepository.findByUsername(user.getUsername());
-
-        if (foundUser.getUsername() == null) {
-            throw new IllegalArgumentException("Cannot update, user does not exist in the database.");
+        if(foundArchive.getArchiveName() == null) {
+            throw new IllegalArgumentException("Archive does not exist in the database.");
         }
 
-        //      Overwriting foundUser's previous field values with the
-        //      Field values from RequestBody user object.
-        //      We need to set the field values because the incoming RequestBody user
-        //      Will contain the new field values to replace the foundUser's current field values
-        //      (i.e. username, firstname, lastname, email, & password)
-        foundUser.setUsername(user.getUsername());
-        foundUser.setFirstName(user.getFirstName());
-        foundUser.setLastName(user.getLastName());
-        foundUser.setEmail(user.getEmail());
-        foundUser.setPassword(user.getPassword());
-        return userRepository.save(foundUser);
+        return foundArchive;
     }
 
-    public void deleteUser(User user) {
-        User foundUser = userRepository.findByUsername(user.getUsername());
+    public List<Archive> findAllArchives() {
+        return archiveRepository.findAll();
+    }
 
-        if (foundUser.getUsername() == null) {
-            throw new IllegalArgumentException("Cannot delete, user does not exist in the database.");
+    public Archive updateArchive(Archive archive) {
+        // look for archive in db
+        Archive foundArchive = archiveRepository.findById(archive.getArchiveId()).get();
+
+        if(foundArchive.getArchiveName() == null) {
+            throw new IllegalArgumentException("The archive does not exist in the database.");
         }
 
-        //  Delete a user
-        userRepository.delete(foundUser);
+        foundArchive.setArchiveId(archive.getArchiveId());
+        foundArchive.setArchiveName(archive.getArchiveName());
+        foundArchive.setArticles(archive.getArticles());
+        return archiveRepository.save(foundArchive);
+    }
+
+    public void deleteArchive(int id) {
+
+        Archive foundArchive = archiveRepository.findById(id).get();
+
+        if(foundArchive.getArchiveName() == null) {
+            throw new IllegalArgumentException("Archive does not exist in the database.");
+        }
+
+        archiveRepository.delete(foundArchive);
+        System.out.println("Deleted the archive " + foundArchive.getArchiveName());
     }
 
     public Article saveArticle(Article article) {
@@ -80,9 +73,9 @@ public class ServiceLayer {
         return articleRepository.save(article);
     }
 
-    public Article findArticle(String articleId) {
+    public Article findArticle(int id) {
 
-        Article foundArticle = articleRepository.findByArticleId(articleId);
+        Article foundArticle = articleRepository.findById(id).get();
         return foundArticle;
     }
 
@@ -90,29 +83,36 @@ public class ServiceLayer {
         return articleRepository.findAll();
     }
 
-    public List<Article> findUserArticles(String username) {
-        User foundUser = userRepository.findByUsername(username);
+    public List<Article> findArchiveArticles(int archiveId) {
 
-        if (foundUser.getUsername() == null) {
-            throw new IllegalArgumentException("User does not exist in the database");
+        Archive foundArchive = archiveRepository.findById(archiveId).get();
+
+        if (foundArchive.getArchiveName() == null) {
+            throw new IllegalArgumentException("Archive does not exist in the database");
         }
 
-        List<Article> articleList = articleRepository.findAll();
+        List<Article> articleList = articleRepository.findAllArticlesByArchive(archiveId);
 
-        List<Article> userArticles = articleList
-                .stream()
-                .filter(a -> a.getUsername() == username)
-                .collect(Collectors.toList());
-
-        return userArticles;
+        return articleList;
     }
 
-    public void deleteArticle(Article article) {
+    public void deleteArticle(int id) {
 
-        Article foundArticle = articleRepository.findByArticleId(article.getArticleId());
+        Article foundArticle = articleRepository.findById(id).get();
 
-        if (foundArticle.getArticleId() == null) {
+        if (foundArticle.getTitle() == null) {
             throw new IllegalArgumentException("Cannot delete, article does not exist in database.");
+        }
+
+        articleRepository.delete(foundArticle);
+    }
+
+    public void removeArticleFromArchive(int archiveId, Article article){
+
+        Article foundArticle = articleRepository.findById(article.getArticleId()).get();
+
+        if(foundArticle == null){
+            throw new IllegalArgumentException("Cannot delete, article does not exist in the archive.");
         }
 
         articleRepository.delete(foundArticle);
