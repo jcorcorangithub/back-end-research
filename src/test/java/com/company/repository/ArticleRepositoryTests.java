@@ -26,12 +26,12 @@ public class ArticleRepositoryTests {
 
     @Before
     public void setUp() throws Exception {
-       articleRepository.deleteAll();
+        articleRepository.deleteAll();
 
-       article = new Article();
+        article = new Article();
 
-        article.setArticleId("T_EST");
-        article.setUsername("Tester");
+        article.setArticleId(1);
+        article.setArchiveId(28);
         article.setTitle("Testing with Junit");
         article.setLink("www.test.com");
         article.setSnippet("test snippet");
@@ -39,8 +39,8 @@ public class ArticleRepositoryTests {
 
         article2 = new Article();
 
-        article2.setArticleId("M_OCK");
-        article2.setUsername("Mock");
+        article2.setArticleId(1);
+        article2.setArchiveId(28);
         article2.setTitle("Mocking with Mockify");
         article2.setLink("www.mock.com");
         article2.setSnippet("mock snippet");
@@ -49,30 +49,32 @@ public class ArticleRepositoryTests {
 
     @Test
     public void shouldGetArticleByArticleIdFromDatabase() {
-       Article article1 = articleRepository.save(article);
-        System.out.println(article1.getTitle());
 
-        Article fromRepo = articleRepository.findByArticleId(article.getArticleId()).get();
+        article = articleRepository.save(article);
+        System.out.println(article.getTitle());
+        Article fromRepo = articleRepository.findById(article.getArticleId()).get();
+
         assertEquals(article.getTitle(), fromRepo.getTitle());
     }
 
     @Test
     public void shouldGetAllArticlesFromDatabase() {
+
         article = articleRepository.save(article);
         article2 = articleRepository.save(article2);
-
         List<Article> articleList = articleRepository.findAll();
+
         assertEquals(articleList, articleRepository.findAll());
     }
 
     @Test
     public void shouldDeleteArticleFromDatabase() {
-      article = articleRepository.save(article);
-      article2 = articleRepository.save(article2);
 
-      articleRepository.deleteByArticleId(article2.getArticleId()).get();
+        article = articleRepository.save(article);
+        article2 = articleRepository.save(article2);
+        articleRepository.deleteById(article2.getArticleId());
+        Optional<Article> fromRepo = articleRepository.findById(article2.getArticleId());
 
-      Optional<Article> fromRepo = articleRepository.findByArticleId(article2.getArticleId());
-      assertFalse(fromRepo.isPresent());
+        assertFalse(fromRepo.isPresent());
     }
 }
