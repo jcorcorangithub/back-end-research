@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a955898d-1af2-4df2-b3ce-2c91ead77ef9" name="Changes" comment="" />
+    <list default="true" id="a955898d-1af2-4df2-b3ce-2c91ead77ef9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/repository/ArticleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/repository/ArticleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/repository/MemberRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/viewmodel/ArchiveViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/viewmodel/ArchiveViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/company/repository/UserRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/company/repository/UserRepositoryTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/company/service/ServiceLayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/company/service/ServiceLayerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -74,6 +85,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_MARK_IGNORED_FILES_AS_EXCLUDED" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
@@ -93,11 +105,17 @@
       <recent name="com.company.controller" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ServiceLayerTest.shouldSaveUserToDatabase">
-    <configuration name="AppTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ArchiveRepositoryTests">
+    <configuration name="ArchiveRepositoryTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="record-collection" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AppTests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.company.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.company.repository.ArchiveRepositoryTests" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -168,18 +186,18 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ArchiveRepositoryTests" />
         <item itemvalue="JUnit.ServiceLayerTest.shouldSaveUserToDatabase" />
         <item itemvalue="JUnit.ServiceLayerTest" />
         <item itemvalue="JUnit.ArchiveRepositoryTests.shouldUpdateArchiveInDataBase" />
         <item itemvalue="JUnit.ArchiveRepositoryTests.shouldDeleteArchiveFromDatabase" />
-        <item itemvalue="JUnit.AppTests" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="92fb2769-7124-4a6b-a1d8-2816b903209c" name="Changes" comment="" />
+      <changelist id="a955898d-1af2-4df2-b3ce-2c91ead77ef9" name="Changes" comment="" />
       <created>1646668719226</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />

@@ -40,7 +40,11 @@ public class ServiceLayerTest {
     @MockBean
     ArchiveRepository archiveRepository;
 
+<<<<<<< HEAD
+    @MockBean
+=======
 //    @MockBean
+>>>>>>> b8bce71aa09de58212bfb6a6735dfb3c67186678
 //    MemberRepository memberRepository;
 
     //    Declare input & output objects
@@ -55,7 +59,11 @@ public class ServiceLayerTest {
     Archive inputArchive;
     Archive outputArchive;
     List<Archive> archives;
+<<<<<<< HEAD
+//
+=======
 
+>>>>>>> b8bce71aa09de58212bfb6a6735dfb3c67186678
 //    Member inputMember;
 //    Member outputMember;
 //    List<Member> members;
