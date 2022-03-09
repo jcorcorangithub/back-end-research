@@ -27,9 +27,7 @@ public class ArticleController {
         }
 
         @DeleteMapping("article/{articleId}")
-        public void deleteArticleById(@PathVariable int id) {
-                articleRepository.deleteById(id);
+        public void deleteArticleById(@PathVariable int articleId) {
+                articleRepository.deleteById(articleId);
         }
-
-
 }

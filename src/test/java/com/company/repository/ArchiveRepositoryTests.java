@@ -1,7 +1,6 @@
 package com.company.repository;
 
 import com.company.model.Archive;
-import com.company.model.Article;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,6 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -47,6 +47,7 @@ public class ArchiveRepositoryTests {
     public void shouldInsertArchiveIntoArchiveTable() {
 
         Archive fromArchiveRepository = archiveRepository.save(inputArchive);
+
         assertEquals(outputArchive.getArchiveName(), fromArchiveRepository.getArchiveName());
     }
 
@@ -55,6 +56,7 @@ public class ArchiveRepositoryTests {
 
         archiveRepository.save(inputArchive);
         Optional<Archive> fromArchiveRepository = archiveRepository.findById(inputArchive.getArchiveId());
+
         assertEquals(inputArchive.getArchiveId(), fromArchiveRepository.get().getArchiveId());
     }
 
@@ -63,18 +65,39 @@ public class ArchiveRepositoryTests {
 
         archiveRepository.save(inputArchive);
         List<Archive> fromArchiveRepository = archiveRepository.findAll();
+
         assertEquals(archives.size(), fromArchiveRepository.size());
     }
 
+    //  Write tests for archiveRepository delete methods
     @Test
-    public void shouldUpdateAnArchiveName() {
+    public void shouldAddAndGetArchiveByArchiveIdFromDatabase() {
 
         archiveRepository.save(inputArchive);
-        inputArchive.setArchiveName("Psychology");
-        archiveRepository.save(inputArchive);
-        Archive fromArchiveRepository = archiveRepository.findById(inputArchive.getArchiveId()).get();
-        assertEquals(inputArchive.getArchiveName(), fromArchiveRepository.getArchiveName());
+
+        Archive fromRepo = archiveRepository.findById(inputArchive.getArchiveId()).get();
+        assertEquals(inputArchive, fromRepo);
     }
 
-    //  Write tests for archiveRepository delete methods
+    @Test
+    public void shouldUpdateArchiveFromDatabase() {
+
+        archiveRepository.save(inputArchive);
+        inputArchive.setArchiveId(1);
+        inputArchive.setArchiveName("Mock update");
+        inputArchive = archiveRepository.save(inputArchive);
+
+        Optional<Archive> fromArchiveRepository = archiveRepository.findById(inputArchive.getArchiveId());
+        assertEquals(inputArchive.getArchiveName(), fromArchiveRepository.get().getArchiveName());
+    }
+
+    @Test
+    public void shouldDeleteArchiveFromDatabase() {
+
+        inputArchive = archiveRepository.save(inputArchive);
+        archiveRepository.delete(inputArchive);
+
+        Optional<Archive> fromRepo = archiveRepository.findById(inputArchive.getArchiveId());
+        assertFalse(fromRepo.isPresent());
+    }
 }
