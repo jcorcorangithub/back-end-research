@@ -10,4 +10,5 @@ import java.util.List;
 public interface ArticleRepository extends JpaRepository<Article, Integer>{
 
     List<Article> findAllArticlesByArchive(int archiveId);
+    Article findBySavedArticleId(int id);
 }

@@ -27,9 +27,9 @@ public class ServiceLayer {
         return archiveRepository.save(archive);
     }
 
-    public Archive findArchive(Archive archive) {
+    public Archive findArchive(int id) {
 
-        Archive foundArchive = archiveRepository.findById(archive.getArchiveId()).get();
+        Archive foundArchive = archiveRepository.findById(id).get();
 
         if(foundArchive.getArchiveName() == null) {
             throw new IllegalArgumentException("Archive does not exist in the database.");
@@ -56,16 +56,16 @@ public class ServiceLayer {
         return archiveRepository.save(foundArchive);
     }
 
-    public void deleteArchive(Archive archive) {
+    public void deleteArchive(int id) {
 
-        Archive foundArchive = archiveRepository.findById(archive.getArchiveId()).get();
+        Archive foundArchive = archiveRepository.findById(id).get();
 
         if(foundArchive.getArchiveName() == null) {
             throw new IllegalArgumentException("Archive does not exist in the database.");
         }
 
-        archiveRepository.delete(archive);
-        System.out.println("Deleted the archive " + archive.getArchiveName());
+        archiveRepository.delete(foundArchive);
+        System.out.println("Deleted the archive " + foundArchive.getArchiveName());
     }
 
     public Article saveArticle(Article article) {
@@ -96,12 +96,23 @@ public class ServiceLayer {
         return articleList;
     }
 
-    public void deleteArticle(Article article) {
+    public void deleteArticle(int id) {
 
-        Article foundArticle = articleRepository.findById(article.getArticleId()).get();
+        Article foundArticle = articleRepository.findById(id).get();
 
         if (foundArticle.getTitle() == null) {
             throw new IllegalArgumentException("Cannot delete, article does not exist in database.");
+        }
+
+        articleRepository.delete(foundArticle);
+    }
+
+    public void removeArticleFromArchive(int archiveId, Article article){
+
+        Article foundArticle = articleRepository.findBySavedArticleId(article.getArticleId());
+
+        if(foundArticle == null){
+            throw new IllegalArgumentException("Cannot delete, article does not exist in the archive.");
         }
 
         articleRepository.delete(foundArticle);

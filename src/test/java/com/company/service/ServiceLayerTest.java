@@ -91,7 +91,7 @@ public class ServiceLayerTest {
 
         when(archiveRepository.findById(inputArchive.getArchiveId())).thenReturn(Optional.ofNullable(outputArchive));
 
-        Archive fromServiceArchive = service.findArchive(inputArchive);
+        Archive fromServiceArchive = service.findArchive(inputArchive.getArchiveId());
         assertEquals(fromServiceArchive.getArchiveId(), outputArchive.getArchiveId());
     }
 
@@ -128,7 +128,7 @@ public class ServiceLayerTest {
 
         when(archiveRepository.findById(outputArchive.getArchiveId())).thenReturn(Optional.ofNullable(outputArchive));
         doNothing().when(archiveRepository).delete(outputArchive);
-        service.deleteArchive(outputArchive);
+        service.deleteArchive(outputArchive.getArchiveId());
     }
 
     @Test
@@ -177,10 +177,8 @@ public class ServiceLayerTest {
 
         // Archive's article set
         Set<Article> archiveArticles = new HashSet<>();
-        archiveArticles.add(inputArticle);
-        newArchive.setArticles(archiveArticles);
-
         archiveArticles.add(foundArticle);
+        newArchive.setArticles(archiveArticles);
 
         List<Article> foundArticles = new ArrayList<>();
         foundArticles.add(foundArticle);
@@ -196,7 +194,7 @@ public class ServiceLayerTest {
     public void shouldDeleteAnArticleFromTheDatabase() {
 
         Article articleToDelete = new Article(
-                1,
+                40,
                 "Population biology of plants.",
                 "https://www.cabdirect.org/cabdirect/abstract/19782321379",
                 "The first chapter is concerned with experiments, analogies and models.",
@@ -205,6 +203,6 @@ public class ServiceLayerTest {
 
         when(articleRepository.findById(inputArticle.getArticleId())).thenReturn(Optional.ofNullable(articleToDelete));
         doNothing().when(articleRepository).delete(articleToDelete);
-        service.deleteArticle(articleToDelete);
+        service.deleteArticle(articleToDelete.getArticleId());
     }
 }
