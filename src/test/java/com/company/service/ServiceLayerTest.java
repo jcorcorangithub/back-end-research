@@ -28,14 +28,12 @@ public class ServiceLayerTest {
     @Autowired
     ServiceLayer service;
 
-    //    Declare mockbeans of repositories
+    //    Declare mock repositories for Archive & Article
     @MockBean
     ArticleRepository articleRepository;
 
     @MockBean
     ArchiveRepository archiveRepository;
-
-
 
     Article inputArticle;
     Article outputArticle;
@@ -44,10 +42,6 @@ public class ServiceLayerTest {
     Archive inputArchive;
     Archive outputArchive;
     List<Archive> archives;
-
-//    Member inputMember;
-//    Member outputMember;
-//    List<Member> members;
 
     @Before
     public void setUp() throws Exception {

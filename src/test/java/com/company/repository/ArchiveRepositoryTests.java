@@ -75,4 +75,6 @@ public class ArchiveRepositoryTests {
         Archive fromArchiveRepository = archiveRepository.findById(inputArchive.getArchiveId()).get();
         assertEquals(inputArchive.getArchiveName(), fromArchiveRepository.getArchiveName());
     }
+
+    //  Write tests for archiveRepository delete methods
 }
