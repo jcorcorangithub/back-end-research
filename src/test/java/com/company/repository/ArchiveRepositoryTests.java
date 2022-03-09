@@ -66,7 +66,13 @@ public class ArchiveRepositoryTests {
         assertEquals(archives.size(), fromArchiveRepository.size());
     }
 
-    
+    @Test
+    public void shouldUpdateAnArchiveName() {
 
-
+        archiveRepository.save(inputArchive);
+        inputArchive.setArchiveName("Psychology");
+        archiveRepository.save(inputArchive);
+        Archive fromArchiveRepository = archiveRepository.findById(inputArchive.getArchiveId()).get();
+        assertEquals(inputArchive.getArchiveName(), fromArchiveRepository.getArchiveName());
+    }
 }

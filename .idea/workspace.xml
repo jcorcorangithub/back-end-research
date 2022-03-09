@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c05bee71-4cb2-4e89-98eb-1855734b9c56" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/repository/ArchiveRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/repository/ArchiveRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/repository/ArticleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/repository/ArticleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/service/ServiceLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/service/ServiceLayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/company/controller/UserControllerTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/company/repository/ArchiveArticleRespositoryTests.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/company/repository/ArchiveRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/company/repository/ArchiveRepositoryTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/company/repository/MemberRepositoryTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/company/repository/UserRepositoryTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +91,7 @@
       <recent name="com.company" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ArchiveRepositoryTests.shouldFindArchiveByArchiveId">
+  <component name="RunManager" selected="JUnit.ArchiveRepositoryTests.shouldUpdateAnArchiveName">
     <configuration name="ArchiveRepositoryTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="record-collection" />
       <extension name="coverage">
@@ -147,17 +139,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ServiceLayerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ArchiveRepositoryTests.shouldUpdateAnArchiveName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="record-collection" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.company.service.*" />
+          <option name="PATTERN" value="com.company.repository.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.company.service" />
-      <option name="MAIN_CLASS_NAME" value="com.company.service.ServiceLayerTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="com.company.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.company.repository.ArchiveRepositoryTests" />
+      <option name="METHOD_NAME" value="shouldUpdateAnArchiveName" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -180,11 +173,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ArchiveRepositoryTests.shouldUpdateAnArchiveName" />
         <item itemvalue="JUnit.ArchiveRepositoryTests.shouldFindArchiveByArchiveId" />
         <item itemvalue="JUnit.ArchiveRepositoryTests" />
         <item itemvalue="JUnit.ArchiveRepositoryTests.shouldFindAllArchives" />
         <item itemvalue="JUnit.ServiceLayerTest.shouldReturnAllArticlesBelongingToAnArchive" />
-        <item itemvalue="JUnit.ServiceLayerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -213,16 +206,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/company/repository/ArchiveRepositoryTests.java</url>
-          <line>58</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
