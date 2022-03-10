@@ -65,7 +65,6 @@ public class ServiceLayerTest {
 
     @Before
     public void setUp() throws Exception {
-
         //  Initialize input objects & output objects
 
         //   Article
@@ -133,10 +132,7 @@ public class ServiceLayerTest {
         updatedArchive.setArchiveName("Psychology");
         updatedArchive.setArticles(inputArchive.getArticles());
 
-        //  Find the article that exists in the database
         when(archiveRepository.findById(outputArchive.getArchiveId())).thenReturn(Optional.ofNullable(outputArchive));
-
-        //  Saves an updated archive record to the database
         when(archiveRepository.save(updatedArchive)).thenReturn(updatedArchive);
 
         Archive foundArchive = archiveRepository.findById(outputArchive.getArchiveId()).get();
