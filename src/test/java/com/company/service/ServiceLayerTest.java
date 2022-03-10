@@ -121,8 +121,8 @@ public class ServiceLayerTest {
 
         Archive fromServiceUpdatedArchive = service.updateArchive(updatedArchive);
 
-        assertEquals(fromServiceUpdatedArchive.getArchiveId(), foundArchive.getArchiveId());
-        assertEquals(fromServiceUpdatedArchive.getArticles().size(), foundArchive.getArticles().size());
+        assertEquals(foundArchive.getArchiveId(), fromServiceUpdatedArchive.getArchiveId());
+        assertEquals(foundArchive.getArticles().size(), fromServiceUpdatedArchive.getArticles().size());
     }
 
     @Test
@@ -164,6 +164,7 @@ public class ServiceLayerTest {
 
     @Test
     public void shouldReturnAllArticlesBelongingToAnArchive() {
+
         // Instantiate the found article from inputArchive
         Article foundArticle = new Article(
                 7,
@@ -190,6 +191,38 @@ public class ServiceLayerTest {
 
         List<Article> fromServiceUserArticles = service.findArchiveArticles(newArchive.getArchiveId());
         assertEquals(fromServiceUserArticles.size(), archiveArticles.size());
+    }
+
+    @Test
+    public void shouldUpdateArticleTest(){
+
+        Article originalArticle = new Article();
+        originalArticle.setTitle("title");
+        originalArticle.setArticleId(1);
+        originalArticle.setSummary("summary");
+        originalArticle.setSnippet("snippet");
+        originalArticle.setLink("link");
+        originalArticle.setArchiveId(1);
+
+        //create an example of what would be the updated object (this is a fake version that will be used as a reference for the test)
+        Article updatedArticle = new Article();
+        updatedArticle.setTitle("title");
+        updatedArticle.setArticleId(1);
+        updatedArticle.setSummary("updated summary");
+        updatedArticle.setSnippet("snippet");
+        updatedArticle.setLink("link");
+        updatedArticle.setArchiveId(1);
+
+        //then we will mock the function of looking in the database for the "original/non-updated" object
+        when(articleRepository.findById(originalArticle.getArticleId())).thenReturn(Optional.ofNullable(originalArticle));
+
+        //then mock the save/update function using the object we instantiated in step 1 (updated article)
+        when(articleRepository.save(updatedArticle)).thenReturn(updatedArticle);
+
+        //then find that new/updated article in the database
+        Article fromServiceUpdatedArticle = service.updateArticle(updatedArticle);
+
+        assertEquals(fromServiceUpdatedArticle.getSummary(), updatedArticle.getSummary());
     }
 
     @Test

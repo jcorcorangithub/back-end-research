@@ -107,14 +107,20 @@ public class ServiceLayer {
         articleRepository.delete(foundArticle);
     }
 
-    public void removeArticleFromArchive(int archiveId, Article article){
+    public Article updateArticle(Article article){
 
         Article foundArticle = articleRepository.findById(article.getArticleId()).get();
 
         if(foundArticle == null){
-            throw new IllegalArgumentException("Cannot delete, article does not exist in the archive.");
+            throw new IllegalArgumentException("article does not exist in the archive.");
         }
 
-        articleRepository.delete(foundArticle);
+        //  Update the found article
+        foundArticle.setArticleId(article.getArticleId());
+        foundArticle.setSummary(article.getSummary());
+        foundArticle.setSnippet(article.getSnippet());
+        foundArticle.setLink(article.getLink());
+        foundArticle.setTitle(article.getTitle());
+        return articleRepository.save(foundArticle);
     }
 }

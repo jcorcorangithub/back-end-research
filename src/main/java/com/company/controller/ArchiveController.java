@@ -2,7 +2,9 @@ package com.company.controller;
 
 import com.company.model.Archive;
 import com.company.repository.ArchiveRepository;
+import com.company.service.ServiceLayer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,44 +14,43 @@ import java.util.Optional;
 public class ArchiveController {
 
     @Autowired
-    private ArchiveRepository archiveRepository;
+    private ServiceLayer serviceLayer;
+//    private ArchiveRepository archiveRepository;
 
     @PostMapping("/archive") // create new archive
+    @ResponseStatus(value = HttpStatus.OK)
     public Archive createArchive(@RequestBody Archive archive) {
-        archiveRepository.save(archive);
+//        archiveRepository.save(archive);
+        serviceLayer.saveArchive(archive);
         return archive;
     }
 
     @GetMapping("/archive") // find all archives
     public List<Archive> getAllArchives() {
-        return archiveRepository.findAll();
+//        return archiveRepository.findAll();
+        return serviceLayer.findAllArchives();
     }
 
     @GetMapping("/archive/{archiveId}") // find archive by id
     public Archive getArchive(@PathVariable int archiveId) {
-        Optional<Archive> archive = archiveRepository.findById(archiveId);
+//        Optional<Archive> archive = archiveRepository.findById(archiveId);
+        Archive archive = serviceLayer.findArchive(archiveId);
 
-        if(!archive.isPresent()) {
+        if(archive.getArchiveName() == null) {
             return null;
         }
-        return archive.get();
-        }
+        return archive;
+    }
 
 
     @PutMapping("/archive/{archiveId}") // update archive by id
     public Archive updateArchiveById(@RequestBody Archive archive, @PathVariable int archiveId) {
-        Optional<Archive> foundArchive = archiveRepository.findById(archive.getArchiveId());
-
-        if (archive.getArchiveId() != foundArchive.get().getArchiveId()) {
-            throw new IllegalArgumentException("Archive ID must match parameter given!");
-        }
-        foundArchive.get().setArchiveId(archive.getArchiveId());
-        foundArchive.get().setArchiveName(archive.getArchiveName());
-        return archiveRepository.save(foundArchive.get());
+        return serviceLayer.updateArchive(archive);
     }
 
-    @DeleteMapping("/archive/{id}")
-    public void deleteArchive(@PathVariable int archiveID) {
-        archiveRepository.deleteById(archiveID);
+    @DeleteMapping("/archive/{archiveId}")
+    @ResponseStatus(value = HttpStatus.NO_CONTENT)
+    public void deleteArchive(@PathVariable int archiveId) {
+        serviceLayer.deleteArchive(archiveId);
     }
 }
