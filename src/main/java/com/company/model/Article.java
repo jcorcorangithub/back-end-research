@@ -4,12 +4,13 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Objects;
 
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Table(name = "article")
-public class Article implements Serializable {
+public class Article {
 
     @Id
     @Column(name = "article_id")
@@ -33,8 +34,7 @@ public class Article implements Serializable {
         this.snippet = snippet;
         this.summary = summary;
     }
-
-    public Article() { };
+    public Article(){};
 
     public int getArticleId() {
         return articleId;
@@ -114,7 +114,6 @@ public class Article implements Serializable {
                 ", link='" + link + '\'' +
                 ", snippet='" + snippet + '\'' +
                 ", summary='" + summary + '\'' +
-//                ", archive=" + archive +
                 '}';
     }
 }

@@ -2,7 +2,6 @@ package com.company.service;
 
 import com.company.model.Archive;
 import com.company.model.Article;
-//import com.company.model.Member;
 import com.company.repository.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;
@@ -52,6 +51,9 @@ public class ServiceLayerTest {
 
     @MockBean
     ArchiveRepository archiveRepository;
+
+
+    @MockBean
 
     Article inputArticle;
     Article outputArticle;

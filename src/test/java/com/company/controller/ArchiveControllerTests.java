@@ -77,8 +77,8 @@ public class ArchiveControllerTests{
         when(serviceLayer.saveArchive(inputArchive)).thenReturn(outputArchive);
 
         mockMvc.perform(post("/archive")
-                .content(inputString)
-                .contentType(MediaType.APPLICATION_JSON)
+                        .content(inputString)
+                        .contentType(MediaType.APPLICATION_JSON)
                 )
                 .andDo(print())
                 .andExpect(status().isOk())
@@ -104,7 +104,7 @@ public class ArchiveControllerTests{
         String outputString = mapper.writeValueAsString(archiveList);
         when(serviceLayer.findAllArchives()).thenReturn(archiveList);
         mockMvc.perform(get("/archive")
-                .contentType(MediaType.APPLICATION_JSON)
+                        .contentType(MediaType.APPLICATION_JSON)
                 )
                 .andDo(print())
                 .andExpect(status().isOk())
@@ -119,8 +119,8 @@ public class ArchiveControllerTests{
         when(serviceLayer.findArchive(inputArchive.getArchiveId())).thenReturn(Optional.ofNullable(outputArchive));
 
         mockMvc.perform(get("/archive/1")
-                .content(inputString)
-                .contentType(MediaType.APPLICATION_JSON)
+                        .content(inputString)
+                        .contentType(MediaType.APPLICATION_JSON)
                 )
                 .andDo(print())
                 .andExpect(status().isOk())
@@ -134,7 +134,8 @@ public class ArchiveControllerTests{
 
         mockMvc.perform(get("/archive/8577")
 //                        .content(inputFindArchive)
-                        .contentType(MediaType.APPLICATION_JSON)
+                                .contentType(MediaType.APPLICATION_JSON)
+
                 )
                 .andDo(print())
                 .andExpect(status().isUnprocessableEntity());
