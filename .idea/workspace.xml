@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+
     <list default="true" id="a955898d-1af2-4df2-b3ce-2c91ead77ef9" name="Changes" comment="" />
+
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,7 +23,9 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
+
         <entry key="$PROJECT_DIR$" value="nmcontrollermvc" />
+
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -85,7 +89,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -100,6 +106,7 @@
       <recent name="com.company.controller" />
     </key>
   </component>
+
   <component name="RunManager" selected="JUnit.ArticleControllerTest.shouldReturn422DeleteArticle">
     <configuration name="ArchiveRepositoryTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="record-collection" />
@@ -112,10 +119,12 @@
       <option name="PACKAGE_NAME" value="com.company.repository" />
       <option name="MAIN_CLASS_NAME" value="com.company.repository.ArchiveRepositoryTests" />
       <option name="TEST_OBJECT" value="class" />
+
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+
     <configuration name="ArticleControllerTest.shouldReturn422DeleteArticle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="record-collection" />
       <extension name="coverage">
@@ -128,11 +137,14 @@
       <option name="MAIN_CLASS_NAME" value="com.company.controller.ArticleControllerTest" />
       <option name="METHOD_NAME" value="shouldReturn422DeleteArticle" />
       <option name="TEST_OBJECT" value="method" />
+
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+
     <configuration name="ArticleControllerTest.shouldReturn422ErrorForMethodArgumentNotValidException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+
       <module name="record-collection" />
       <extension name="coverage">
         <pattern>
@@ -141,14 +153,18 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.company.controller" />
+
       <option name="MAIN_CLASS_NAME" value="com.company.controller.ArticleControllerTest" />
       <option name="METHOD_NAME" value="shouldReturn422ErrorForMethodArgumentNotValidException" />
+
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+
     <configuration name="ArticleControllerTest.shouldReturn422ErrorOnInvalidId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+
       <module name="record-collection" />
       <extension name="coverage">
         <pattern>
@@ -157,8 +173,10 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.company.controller" />
+
       <option name="MAIN_CLASS_NAME" value="com.company.controller.ArticleControllerTest" />
       <option name="METHOD_NAME" value="shouldReturn422ErrorOnInvalidId" />
+
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -179,6 +197,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -197,6 +216,7 @@
         <item itemvalue="JUnit.ArticleControllerTest.shouldReturn422ErrorOnInvalidId" />
         <item itemvalue="JUnit.ArticleRepositoryTests" />
         <item itemvalue="JUnit.ArchiveRepositoryTests" />
+
       </list>
     </recent_temporary>
   </component>
