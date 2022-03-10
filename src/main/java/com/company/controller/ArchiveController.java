@@ -34,11 +34,11 @@ public class ArchiveController {
     @GetMapping("/archive/{archiveId}") // find archive by id
     public Archive getArchive(@PathVariable int archiveId) {
 //        Optional<Archive> archive = archiveRepository.findById(archiveId);
-        Archive archive = serviceLayer.findArchive(archiveId);
+        Archive archive = serviceLayer.findArchive(archiveId).get();
 
-        if(archive.getArchiveName() == null) {
-            return null;
-        }
+//        if(archive.getArchiveName() == null) {
+//            return null;
+//        }
         return archive;
     }
 
