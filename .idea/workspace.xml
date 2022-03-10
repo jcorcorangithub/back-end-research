@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a955898d-1af2-4df2-b3ce-2c91ead77ef9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/controller/ArchiveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/controller/ArchiveController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/controller/ArticleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/service/ServiceLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/service/ServiceLayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/company/service/ServiceLayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/company/service/ServiceLayerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/company/controller/ArticleControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/company/controller/ArticleControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,20 +103,7 @@
       <recent name="com.company.controller" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ArticleRepositoryTests">
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.company.App" />
-      <module name="record-collection" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.company.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.ArticleControllerTest.shouldReturn422DeleteArticle">
     <configuration name="ArchiveRepositoryTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="record-collection" />
       <extension name="coverage">
@@ -135,17 +119,49 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ArchiveRepositoryTests.shouldInsertArchiveIntoArchiveTable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ArticleControllerTest.shouldReturn422DeleteArticle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="record-collection" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.company.repository.*" />
+          <option name="PATTERN" value="com.company.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.company.repository" />
-      <option name="MAIN_CLASS_NAME" value="com.company.repository.ArchiveRepositoryTests" />
-      <option name="METHOD_NAME" value="shouldInsertArchiveIntoArchiveTable" />
+      <option name="PACKAGE_NAME" value="com.company.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.company.controller.ArticleControllerTest" />
+      <option name="METHOD_NAME" value="shouldReturn422DeleteArticle" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ArticleControllerTest.shouldReturn422ErrorForMethodArgumentNotValidException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="record-collection" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.company.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.company.controller.ArticleControllerTest" />
+      <option name="METHOD_NAME" value="shouldReturn422ErrorForMethodArgumentNotValidException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ArticleControllerTest.shouldReturn422ErrorOnInvalidId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="record-collection" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.company.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.company.controller.ArticleControllerTest" />
+      <option name="METHOD_NAME" value="shouldReturn422ErrorOnInvalidId" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -166,22 +182,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ArticleRepositoryTests.shouldGetArticleByArticleIdFromDatabase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="record-collection" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.company.repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.company.repository" />
-      <option name="MAIN_CLASS_NAME" value="com.company.repository.ArticleRepositoryTests" />
-      <option name="METHOD_NAME" value="shouldGetArticleByArticleIdFromDatabase" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -195,11 +195,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ArticleControllerTest.shouldReturn422DeleteArticle" />
+        <item itemvalue="JUnit.ArticleControllerTest.shouldReturn422ErrorForMethodArgumentNotValidException" />
+        <item itemvalue="JUnit.ArticleControllerTest.shouldReturn422ErrorOnInvalidId" />
         <item itemvalue="JUnit.ArticleRepositoryTests" />
         <item itemvalue="JUnit.ArchiveRepositoryTests" />
-        <item itemvalue="JUnit.ArchiveRepositoryTests.shouldInsertArchiveIntoArchiveTable" />
-        <item itemvalue="Application.App" />
-        <item itemvalue="JUnit.ArticleRepositoryTests.shouldGetArticleByArticleIdFromDatabase" />
       </list>
     </recent_temporary>
   </component>
