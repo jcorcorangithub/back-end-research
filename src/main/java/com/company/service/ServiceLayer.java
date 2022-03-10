@@ -1,5 +1,6 @@
 package com.company.service;
 
+import com.company.exceptions.NotFoundException;
 import com.company.model.Archive;
 import com.company.model.Article;
 import com.company.repository.*;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Component
@@ -27,11 +29,11 @@ public class ServiceLayer {
         return archiveRepository.save(archive);
     }
 
-    public Archive findArchive(int id) {
+    public Optional<Archive> findArchive(int id) {
 
-        Archive foundArchive = archiveRepository.findById(id).get();
+        Optional<Archive> foundArchive = archiveRepository.findById(id);
 
-        if(foundArchive.getArchiveName() == null) {
+        if(foundArchive == null) {
             throw new IllegalArgumentException("Archive does not exist in the database.");
         }
 
