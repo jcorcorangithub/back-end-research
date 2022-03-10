@@ -10,6 +10,9 @@
         <module name="record-collection" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="record-collection" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
