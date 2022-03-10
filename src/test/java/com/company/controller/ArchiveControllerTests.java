@@ -135,6 +135,7 @@ public class ArchiveControllerTests{
         mockMvc.perform(get("/archive/8577")
 //                        .content(inputFindArchive)
                                 .contentType(MediaType.APPLICATION_JSON)
+
                 )
                 .andDo(print())
                 .andExpect(status().isUnprocessableEntity());

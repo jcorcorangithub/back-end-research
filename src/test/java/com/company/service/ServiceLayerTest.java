@@ -3,6 +3,7 @@ package com.company.service;
 import com.company.model.Archive;
 import com.company.model.Article;
 import com.company.repository.*;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,6 +11,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.web.servlet.MockMvc;
+
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import javax.swing.text.html.Option;
 import java.util.*;
@@ -26,6 +36,14 @@ public class ServiceLayerTest {
     //    Instantiate ServiceLayer when needed
     @Autowired
     ServiceLayer service;
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @MockBean
+    ServiceLayer serviceLayer;
+
+    private ObjectMapper mapper = new ObjectMapper();
 
     //    Declare mock repositories for Archive & Article
     @MockBean
@@ -94,7 +112,7 @@ public class ServiceLayerTest {
 
         when(archiveRepository.findById(inputArchive.getArchiveId())).thenReturn(Optional.ofNullable(outputArchive));
 
-        Archive fromServiceArchive = service.findArchive(inputArchive.getArchiveId());
+        Archive fromServiceArchive = service.findArchive(inputArchive.getArchiveId()).get();
         assertEquals(fromServiceArchive.getArchiveId(), outputArchive.getArchiveId());
     }
 
@@ -244,4 +262,6 @@ public class ServiceLayerTest {
         doNothing().when(articleRepository).delete(articleToDelete);
         service.deleteArticle(articleToDelete.getArticleId());
     }
+
+
 }
