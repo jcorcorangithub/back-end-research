@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface ArticleRepository extends JpaRepository<Article, Integer>{
 
-    List<Article> findAllArticlesByArchive(int archiveId);
+//    List<Article> findAllArticlesByArchive(int archiveId);
 }

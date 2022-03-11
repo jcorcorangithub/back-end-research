@@ -23,9 +23,9 @@ public class Article {
     private String summary;
 
 
-    @ManyToOne
-    @JoinColumn(name="archiveId", nullable=false, insertable = false, updatable = false)
-    private Archive archive;
+//    @ManyToOne
+//    @JoinColumn(name="archiveId", nullable=false, insertable = false, updatable = false)
+//    private Archive archive;
 
     public Article(int archiveId, String title, String link, String snippet, String summary) {
         this.archiveId = archiveId;
@@ -84,13 +84,13 @@ public class Article {
         this.summary = summary;
     }
 
-    public Archive getArchive() {
-        return archive;
-    }
-
-    public void setArchive(Archive archive) {
-        this.archive = archive;
-    }
+//    public Archive getArchive() {
+//        return archive;
+//    }
+//
+//    public void setArchive(Archive archive) {
+//        this.archive = archive;
+//    }
 
     @Override
     public boolean equals(Object o) {

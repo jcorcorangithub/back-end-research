@@ -18,19 +18,26 @@ public class ArticleController {
     private ServiceLayer serviceLayer;
 //        private ArticleRepository articleRepository;
 
-    @GetMapping("/article") // find all articles
-    public List<Article> getAllArticles() {
-        return serviceLayer.findAllArticles();
-    }
 
-    @GetMapping("/article/{articleId}") // find article by String articleId
-    public Article getArticleById(@PathVariable int articleId) {
-        return serviceLayer.findArticle(articleId);
-    }
+        @GetMapping("/article") // find all articles
+        public List<Article> getAllArticles() {
+                return serviceLayer.findAllArticles();
+        }
 
-    @DeleteMapping("article/{articleId}")
-    @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public void deleteArticleById(@PathVariable int articleId) {
-        serviceLayer.deleteArticle(articleId);
-    }
+        @GetMapping("/article/{articleId}") // find article by String articleId
+        public Article getArticleById(@PathVariable int articleId) {
+                return serviceLayer.findArticle(articleId);
+        }
+
+        @DeleteMapping("article/{articleId}")
+        @ResponseStatus(value = HttpStatus.NO_CONTENT)
+        public void deleteArticleById(@PathVariable int articleId) {
+                serviceLayer.deleteArticle(articleId);
+        }
+
+        @PostMapping("/article")
+        public Article saveArticleToArchive(@RequestBody Article article) {
+                return serviceLayer.saveArticle(article);
+        }
+
 }
