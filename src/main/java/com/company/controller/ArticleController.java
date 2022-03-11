@@ -32,4 +32,9 @@ public class ArticleController {
         public void deleteArticleById(@PathVariable int articleId) {
                 serviceLayer.deleteArticle(articleId);
         }
+
+        @PostMapping("/article")
+        public Article saveArticleToArchive(@RequestBody Article article) {
+                return serviceLayer.saveArticle(article);
+        }
 }
