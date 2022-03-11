@@ -1,0 +1,6 @@
+com/company/controller/ArticleControllerTest.class
+com/company/repository/ArchiveRepositoryTests.class
+com/company/controller/ArchiveControllerTests.class
+com/company/service/ServiceLayerTest.class
+com/company/AppTests.class
+com/company/repository/ArticleRepositoryTests.class
