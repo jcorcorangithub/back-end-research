@@ -1,0 +1,12 @@
+com/company/repository/ArchiveRepository.class
+com/company/service/ServiceLayer.class
+com/company/controller/ArchiveController.class
+com/company/CorsConfig.class
+com/company/model/CustomErrorResponse.class
+com/company/model/ControllerExceptionHandler.class
+com/company/controller/ArticleController.class
+com/company/repository/ArticleRepository.class
+com/company/model/Article.class
+com/company/App.class
+com/company/model/Archive.class
+com/company/exceptions/NotFoundException.class

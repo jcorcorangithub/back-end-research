@@ -1,0 +1,12 @@
+/Users/jamescorcoran/Desktop/group-project/src/main/java/com/company/repository/ArchiveRepository.java
+/Users/jamescorcoran/Desktop/group-project/src/main/java/com/company/model/Archive.java
+/Users/jamescorcoran/Desktop/group-project/src/main/java/com/company/service/ServiceLayer.java
+/Users/jamescorcoran/Desktop/group-project/src/main/java/com/company/controller/ArticleController.java
+/Users/jamescorcoran/Desktop/group-project/src/main/java/com/company/App.java
+/Users/jamescorcoran/Desktop/group-project/src/main/java/com/company/exceptions/NotFoundException.java
+/Users/jamescorcoran/Desktop/group-project/src/main/java/com/company/model/Article.java
+/Users/jamescorcoran/Desktop/group-project/src/main/java/com/company/CorsConfig.java
+/Users/jamescorcoran/Desktop/group-project/src/main/java/com/company/model/ControllerExceptionHandler.java
+/Users/jamescorcoran/Desktop/group-project/src/main/java/com/company/repository/ArticleRepository.java
+/Users/jamescorcoran/Desktop/group-project/src/main/java/com/company/controller/ArchiveController.java
+/Users/jamescorcoran/Desktop/group-project/src/main/java/com/company/model/CustomErrorResponse.java
