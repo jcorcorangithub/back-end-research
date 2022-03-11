@@ -8,11 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+
+import static org.junit.Assert.assertEquals;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
 @RunWith(SpringRunner.class)
@@ -27,20 +29,23 @@ public class ArchiveRepositoryTests {
     private List<Archive> archives;
 
     //  Setup Tests for Archive Repository
+
     @Before
     public void setUp() {
         archiveRepository.deleteAll();
 
-    //  Instantiate new Archive objects
+        //  Instantiate new Archive objects
         inputArchive = new Archive("Biology");
         outputArchive = new Archive();
         outputArchive.setArchiveId(inputArchive.getArchiveId());
         outputArchive.setArchiveName("Biology");
 
-    //  Instantiate new List of archives
+        //  Instantiate new List of archives
         archives = new ArrayList<>();
         archives.add(inputArchive);
     }
+
+
 
     //    Archive repository test cases
     @Test
@@ -99,5 +104,6 @@ public class ArchiveRepositoryTests {
 
         Optional<Archive> fromRepo = archiveRepository.findById(inputArchive.getArchiveId());
         assertFalse(fromRepo.isPresent());
+
     }
 }

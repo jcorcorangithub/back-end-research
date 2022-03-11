@@ -1,0 +1,28 @@
+-------------------------------------------------------------------------------
+Test set: com.company.repository.ArticleRepositoryTests
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 8.514 s <<< FAILURE! - in com.company.repository.ArticleRepositoryTests
+shouldGetArticleByArticleIdFromDatabase(com.company.repository.ArticleRepositoryTests)  Time elapsed: 0.537 s  <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [null]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at com.company.repository.ArticleRepositoryTests.shouldGetArticleByArticleIdFromDatabase(ArticleRepositoryTests.java:53)
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at com.company.repository.ArticleRepositoryTests.shouldGetArticleByArticleIdFromDatabase(ArticleRepositoryTests.java:53)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`research_app_test`.`article`, CONSTRAINT `fk_archive` FOREIGN KEY (`archive_id`) REFERENCES `archive` (`archive_id`))
+	at com.company.repository.ArticleRepositoryTests.shouldGetArticleByArticleIdFromDatabase(ArticleRepositoryTests.java:53)
+
+shouldDeleteArticleFromDatabase(com.company.repository.ArticleRepositoryTests)  Time elapsed: 0.017 s  <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [null]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at com.company.repository.ArticleRepositoryTests.shouldDeleteArticleFromDatabase(ArticleRepositoryTests.java:73)
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at com.company.repository.ArticleRepositoryTests.shouldDeleteArticleFromDatabase(ArticleRepositoryTests.java:73)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`research_app_test`.`article`, CONSTRAINT `fk_archive` FOREIGN KEY (`archive_id`) REFERENCES `archive` (`archive_id`))
+	at com.company.repository.ArticleRepositoryTests.shouldDeleteArticleFromDatabase(ArticleRepositoryTests.java:73)
+
+shouldGetAllArticlesFromDatabase(com.company.repository.ArticleRepositoryTests)  Time elapsed: 0.016 s  <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [null]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at com.company.repository.ArticleRepositoryTests.shouldGetAllArticlesFromDatabase(ArticleRepositoryTests.java:63)
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at com.company.repository.ArticleRepositoryTests.shouldGetAllArticlesFromDatabase(ArticleRepositoryTests.java:63)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`research_app_test`.`article`, CONSTRAINT `fk_archive` FOREIGN KEY (`archive_id`) REFERENCES `archive` (`archive_id`))
+	at com.company.repository.ArticleRepositoryTests.shouldGetAllArticlesFromDatabase(ArticleRepositoryTests.java:63)
+

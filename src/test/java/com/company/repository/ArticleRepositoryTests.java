@@ -31,7 +31,7 @@ public class ArticleRepositoryTests {
         article = new Article();
 
         article.setArticleId(1);
-        article.setArchiveId(28);
+        article.setArchiveId(6);
         article.setTitle("Testing with Junit");
         article.setLink("www.test.com");
         article.setSnippet("test snippet");
@@ -40,7 +40,7 @@ public class ArticleRepositoryTests {
         article2 = new Article();
 
         article2.setArticleId(1);
-        article2.setArchiveId(28);
+        article2.setArchiveId(7);
         article2.setTitle("Mocking with Mockify");
         article2.setLink("www.mock.com");
         article2.setSnippet("mock snippet");

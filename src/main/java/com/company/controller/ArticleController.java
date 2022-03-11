@@ -1,3 +1,4 @@
+
 package com.company.controller;
 
 import com.company.model.Article;
@@ -13,9 +14,10 @@ import java.util.Optional;
 @RestController
 public class ArticleController {
 
-        @Autowired
-        private ServiceLayer serviceLayer;
+    @Autowired
+    private ServiceLayer serviceLayer;
 //        private ArticleRepository articleRepository;
+
 
         @GetMapping("/article") // find all articles
         public List<Article> getAllArticles() {
@@ -37,4 +39,5 @@ public class ArticleController {
         public Article saveArticleToArchive(@RequestBody Article article) {
                 return serviceLayer.saveArticle(article);
         }
+
 }

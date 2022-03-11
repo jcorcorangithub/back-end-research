@@ -19,6 +19,7 @@ public class Archive {
     @Column(name = "archive_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int archiveId;
+    @NotEmpty(message = "archive name must not be empty")
     private String archiveName;
 
     @OneToMany(cascade=ALL, mappedBy="archiveId")
